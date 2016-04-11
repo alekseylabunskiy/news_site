@@ -34,7 +34,7 @@
             </p>
           </div>
           <div id="block_header_login" class="block">
-            <p><a href="index.php?c=login">Войти</a> | <a href="#">Регистрация</a></p>
+            <p><a href="index.php?c=login">Войти</a> | <a href="index.php?c=reg">Регистрация</a></p>
           </div>
         </div>
       </div>

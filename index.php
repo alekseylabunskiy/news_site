@@ -16,6 +16,9 @@ switch ($_GET['c'])
   case 'post':
     $controller = new C_Page();
       break;
+  case 'reg':
+    $controller = new C_Registration();
+      break;
   case 'login':
     $controller = new C_Login();
       break;
