@@ -48,6 +48,12 @@ class M_Articles
             }
             return $result;
     }
+    //breadcups
+    function Breadcumps($category){
+        $query = "SELECT * FROM categories WHERE id_category = {$category}";
+            $result = $this->db->Select($query);
+                return $result;
+    }
     // колличество коментариев
     public function getCountComents($id_article){
             $query = "SELECT COUNT(*) AS count FROM coments WHERE id_article = {$id_article}";

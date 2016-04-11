@@ -29,8 +29,7 @@ class C_Page extends C_Base
             $text = $_POST['submitted_comment'];
             if (!empty($text)) {
                $this->coments->addComment($id_user,$id_article,$text);
-            }
-            
+            }           
         }
         else{
             $this->alert = 'Авторизуйтесь для того что бы оставлять коментарии.';
@@ -41,6 +40,8 @@ class C_Page extends C_Base
         $this->related = $this->articles->getArticlesCategory('articles',"1,2",$this->art[0]['category']);
         //коментарии к статье
         $this->coment = $this->coments->getComentsToArt($this->get);
+        //навигация)
+        $this->bcamp = $this->articles->Breadcumps($this->art[0]['category']);
     }
 
     //
@@ -53,7 +54,8 @@ class C_Page extends C_Base
                       'related' => $this->related,
                       'coments' => $this->coment,
                       'get' => $this->get,
-                      'alert' => $this->alert);
+                      'alert' => $this->alert,
+                      'bcamp' => $this->bcamp[0]);
         
         $this->content = $this->View('tpl_one_post.php', $vars);
 

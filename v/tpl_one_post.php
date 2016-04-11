@@ -2,7 +2,7 @@
 <div id="wrapper"> 
   <div id="container">
     <div class="wrapper">
-      <div id="breadcrumb"><a href="index.php">Главная</a> / <span class="active"><?=$article['title']?></span></div>
+      <div id="breadcrumb"><a href="index.php">Главная</a> / <span><?=$bcamp['description']?></span>/<span class="active"><?=$article['title']?></span></div>
       <div id="page"> 
         <!-- content -->
         <div id="content_page">
