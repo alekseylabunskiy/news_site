@@ -37,6 +37,13 @@ abstract class C_Base extends C_Controller
 		if (isset($_GET['logout'])) {
 			$mUsers->Logout();			
 		}
+		//проверяем есть ли у пользователя доступ к админ панели
+		if($mUsers->Can('INTER_TO_ADMIN')){
+			$this->accsess = true;
+		}
+		else{
+			$this->accsess = false;
+		}
 		// Засекаем время начала обработки запроса.
 		$this->start_time = microtime(true);
 	}
@@ -49,7 +56,8 @@ abstract class C_Base extends C_Controller
 	    // Основной шаблон всех страниц.
 		$vars = array('content' => $this->content,
 					  'title' =>$this->title,
-					  'name_user' =>$this->name);			
+					  'name_user' =>$this->name,
+					  'accsess' =>$this->accsess);			
 		$page = $this->View('tpl_main.php', $vars);
 						
 		// Время обработки запроса.

@@ -65,6 +65,9 @@
                 <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
                 <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
                 <li><a href="index.php?c=categories&id_category=weather"><span class="bg">Погода</span></a></li>
+                <?if($accsess):?>
+                <li><a href="index.php?a=admin_panel"><span class="bg">Админка</span></a></li>
+                <?endif?>
               </ul>
             </nav>
           </div>
