@@ -7,7 +7,10 @@ function __autoload($classname){
             break;
       case 'M':
         include_once 'm/' . $classname . '.php';
-            break;      
+            break;
+      case 'A':
+        include_once 'c/a/' . $classname . '.php';
+            break;            
     }
 }
 // Выбор контроллера.
@@ -28,6 +31,11 @@ switch ($_GET['c'])
   default:
     $controller = new C_Welcome();
 }
-
+// Выбор контроллера админки
+switch ($_GET['a']) {
+  case 'admin_panel':
+    $controller = new A_Base_admin();
+    break;
+}
 // Обработка запроса.
 $controller->Request();

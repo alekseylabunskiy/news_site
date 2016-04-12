@@ -22,7 +22,6 @@ $login - логин пользователя
         </div>
         <div class="form-item">
           <input type="checkbox" name="remember" /> запомнить меня
-          <span title="This field is required." class="form-required"></span> 
         </div>
         <div id="edit-actions">
           <button type="submit" name="subm_register"><span class="view_all_medium"><span><span>Вход</span></span></span></button>

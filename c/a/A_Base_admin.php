@@ -6,7 +6,6 @@ abstract class C_Base extends C_Controller
 {
     protected $needLogin;   // необходимость авторизации 
     protected $user;        // авторизованный пользователь
-    protected $title = 'Site Name';
     private $start_time;    // время начала генерации страницы
     
     //
@@ -59,7 +58,7 @@ abstract class C_Base extends C_Controller
                       'title' =>$this->title,
                       'name_user' =>$this->name,
                       'accsess' =>$this->accsess);          
-        $page = $this->View('tpl_main.php', $vars);
+        $page = $this->View('/admin/tpl_main_admin.php', $vars);
                         
         // Время обработки запроса.
         $time = microtime(true) - $this->start_time;        
