@@ -34,7 +34,12 @@
             </p>
           </div>
           <div id="block_header_login" class="block">
+            <?if($name_user == null):?>
             <p><a href="index.php?c=login">Войти</a> | <a href="index.php?c=reg">Регистрация</a></p>
+            <?endif?>
+            <?if($name_user!=null):?>
+              <p>Здравствуйте: <?=$name_user?> | <a href="index.php?logout">Выйти</a></p>
+            <?endif?>
           </div>
         </div>
       </div>
@@ -52,14 +57,14 @@
               <ul>
                 <li class="first active"><a href="index.php"><span class="bg">Главная</span></a></li>
                 <li><a href="#"><span class="bg">Галерея</span></a></li>
-                <li><a href="#"><span class="bg">Мир</span></a></li>
-                <li><a href="#"><span class="bg">Украина</span></a></li>
-                <li><a href="#"><span class="bg">Бизнесс</span></a></li>
-                <li><a href="#"><span class="bg">Спорт</span></a></li>
-                <li><a href="#"><span class="bg">Развлечения</span></a></li>
-                <li><a href="#"><span class="bg">Здоровье</span></a></li>
-                <li><a href="#"><span class="bg">Техника</span></a></li>
-                <li><a href="#"><span class="bg">Погода</span></a></li>
+                <li><a href="index.php?c=categories&id_category=world"><span class="bg">Мир</span></a></li>
+                <li><a href="index.php?c=categories&id_category=ukraine"><span class="bg">Украина</span></a></li>
+                <li><a href="index.php?c=categories&id_category=bisness"><span class="bg">Бизнесс</span></a></li>
+                <li><a href="index.php?c=categories&id_category=sport"><span class="bg">Спорт</span></a></li>
+                <li><a href="index.php?c=categories&id_category=intertaiment"><span class="bg">Развлечения</span></a></li>
+                <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
+                <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
+                <li><a href="index.php?c=categories&id_category=weather"><span class="bg">Погода</span></a></li>
               </ul>
             </nav>
           </div>
@@ -75,15 +80,16 @@
       <div id="block_footer_menu" class="block">
         <nav>
           <ul>
-            <li class="first active"><a href="index.html">Главная</a></li>
-            <li><a href="gallery_3columns.html">Галерея</a></li>
-            <li><a href="#">Мир</a></li>
-            <li><a href="#">Украина</a></li>
-            <li><a href="#">Бизнесс</a></li>
-            <li><a href="#">Спорт</a></li>
-            <li><a href="#">Развлечения</a></li>
-            <li><a href="#">Здоровье</a></li>
-            <li><a href="#">Техника</a></li>
+            <li><a href="index.php"><span class="bg">Главная</span></a></li>
+            <li><a href="#"><span class="bg">Галерея</span></a></li>
+            <li><a href="index.php?c=categories&id_category=world"><span class="bg">Мир</span></a></li>
+            <li><a href="index.php?c=categories&id_category=ukraine"><span class="bg">Украина</span></a></li>
+            <li><a href="index.php?c=categories&id_category=bisness"><span class="bg">Бизнесс</span></a></li>
+            <li><a href="index.php?c=categories&id_category=sport"><span class="bg">Спорт</span></a></li>
+            <li><a href="index.php?c=categories&id_category=intertaiment"><span class="bg">Развлечения</span></a></li>
+            <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
+            <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
+            <li><a href="index.php?c=categories&id_category=weather"><span class="bg">Погода</span></a></li>            
             <li><a href="#">О Нас</a></li>
             <li><a href="contacts.html">Контакты</a></li>
           </ul>

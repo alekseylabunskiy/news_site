@@ -21,7 +21,10 @@ switch ($_GET['c'])
       break;
   case 'login':
     $controller = new C_Login();
-      break;
+      break; 
+  case 'categories':
+    $controller = new C_Categories();
+      break;          
   default:
     $controller = new C_Welcome();
 }

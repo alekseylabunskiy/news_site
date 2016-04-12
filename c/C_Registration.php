@@ -1,6 +1,6 @@
 <?php
 //
-// Контроллер страницы авторизации
+// Контроллер страницы регистрации
 //
 class C_Registration extends C_Base
 {
@@ -14,11 +14,26 @@ class C_Registration extends C_Base
     //
     protected function OnInput() 
     {
-        // Выход из системы пользователя.
-        $mUsers = M_Users::Instance();        
+        
+        $mUsers = M_Users::Instance();
+        $articles = M_Articles::Instance();
+        // Выход из системы пользователя.        
         $mUsers->Logout();
         
+        $this->alert = 'Пожалуста заполните все поля.';
         
+        if (isset($_POST['subm_register']) && !empty($_POST['user_r_login'])) {
+           
+            $reg = $mUsers->Registration($_POST['user_name'],$_POST['user_r_login'],$_POST['user_r_password'],$_POST['user_email'],$role = 3);
+            if($reg){
+                $this->alert = 'Вы зарегестрированы!'; 
+            }
+            else{
+                $this->alert = 'Пожалуста заполните все поля.';
+            }
+
+        }
+
         // C_Base.
         parent::OnInput();
         
@@ -30,7 +45,7 @@ class C_Registration extends C_Base
     protected function OnOutput() 
     {    
         // Генерация содержимого формы входа.
-        $vars = array();        
+        $vars = array('alert' => $this->alert);        
         $this->content = $this->View('tpl_registration.php', $vars);
         
         // C_Base.

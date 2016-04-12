@@ -15,7 +15,8 @@ abstract class C_Base extends C_Controller
 	function __construct()
 	{
 		$this->needLogin = false;
-		$this->user = null;		
+		$this->user = null;
+		$this->name = null;		
 	}
 	
 	//
@@ -27,7 +28,15 @@ abstract class C_Base extends C_Controller
 		$mUsers = M_Users::Instance();		
 		$mUsers->ClearSessions();		
 		$this->user = $mUsers->Get();
-		
+		//если пользователь залогинен передаем его имя
+		if (!empty($this->user)) {
+			$this->name = $this->user['name'];
+		}
+
+		//logout
+		if (isset($_GET['logout'])) {
+			$mUsers->Logout();			
+		}
 		// Засекаем время начала обработки запроса.
 		$this->start_time = microtime(true);
 	}
@@ -38,7 +47,9 @@ abstract class C_Base extends C_Controller
 	protected function OnOutput()
 	{
 	    // Основной шаблон всех страниц.
-		$vars = array('content' => $this->content,'title' =>$this->title);			
+		$vars = array('content' => $this->content,
+					  'title' =>$this->title,
+					  'name_user' =>$this->name);			
 		$page = $this->View('tpl_main.php', $vars);
 						
 		// Время обработки запроса.

@@ -28,6 +28,7 @@ class M_Users
 	public function __construct()
 	{
 		$this->msql = M_MSQL::Instance();
+		$this->articles = M_Articles::Instance();
 		$this->sid = null;
 		$this->uid = null;
 		$this->onlineMap = null;
@@ -78,7 +79,27 @@ class M_Users
 		
 		return true;
 	}
-	
+	//
+	// Регистрация
+	//
+	public function Registration($name,$login,$password,$email,$role = 3){
+		// очищаем входящие данные
+		$name = $this->articles->Clean($name);
+		$login = $this->articles->Clean($login);
+		$password = $this->articles->Clean($password);
+		$email = $this->articles->Clean($email);
+
+		// Заносим в  базу
+
+		$obj = ['login' => $login,
+				'password' => md5($password),
+				'email' => $email,
+				'id_role' => $role,
+				'name' => $name];
+		$result = $this->msql->Insert('users',$obj);		
+
+			return true;
+	}
 	//
 	// Выход
 	//
