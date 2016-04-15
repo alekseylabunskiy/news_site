@@ -30,6 +30,11 @@ class M_Articles
             $result = $this->db->Select($query);
             return $result;
     }
+    public function SearchArt($search_words){
+        $query = "SELECT * FROM articles WHERE id LIKE '%{$search_words}%'";
+            $result = $this->db->Select($query);
+            return $result;
+    }
     //статьи по категориям с добавлением в результирующий массив колличество коментариев
     public function getArticlesCategory($table,$limit,$category){
         $query = "SELECT * FROM {$table} WHERE category = {$category} ORDER BY id DESC LIMIT {$limit}";
@@ -84,6 +89,18 @@ class M_Articles
         $query = "SELECT users.id_user,users.name,coments.id_coment,coments.id_user,coments.create_at,coments.id_article,coments.text_coment,articles.id,articles.title FROM users,coments,articles WHERE articles.id = coments.id_article ORDER BY coments.id_coment DESC LIMIT 2";
         $result = $this->db->Select($query); 
         return $result;
+    }
+    //вносим изменения в статью
+    public function UpdateArticles($table,$obj,$id){
+        $where = "id = $id";
+        $result = $this->db->Update($table,$obj, $where);
+            return $result;
+    }
+    //удаляем статью
+    public function DeleteArticles($id){
+        $where = "id = $id";
+        $result = $this->db->Delete('articles', $where);
+            return $result;
     }
 
 }

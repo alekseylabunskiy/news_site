@@ -386,5 +386,12 @@ ul.sitemap li ul{margin-top:15px;}
 #login_form{width: 300px; height: 300px; padding: 20px;margin-left: 500px;background-color: #C4C4C4;}
 #l_form{margin: 65px;}
 #authorization_f{font-size: 22px;text-align: center;}
- #registration_form{width: 300px; height: 300px; padding: 20px;margin-left: 500px;background-color: #C4C4C4;}
-
+#registration_form{width: 300px; height: 300px; padding: 20px;margin-left: 500px;background-color: #C4C4C4;}
+#adm-header{border:1px dotted black;padding: 15px; background-color: #163A61;}
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('fonts/glyphicons-halflings-regular.eot');
+    src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg'); }
+#adm_list_articles th{text-align: center;}
+#adm_list_articles td{text-align: center;}
+#adm_list_articles td a{ padding: 0px;}

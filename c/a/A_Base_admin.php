@@ -2,7 +2,7 @@
 //
 // Базовый контроллер сайта.
 //
-abstract class C_Base extends C_Controller
+class A_Base_admin extends C_Controller
 {
     protected $needLogin;   // необходимость авторизации 
     protected $user;        // авторизованный пользователь
@@ -32,18 +32,10 @@ abstract class C_Base extends C_Controller
             $this->name = $this->user['name'];
         }
 
-        //logout
-        if (isset($_GET['logout'])) {
-            $mUsers->Logout();
-            header("Location:index.php");          
-        }
         //проверяем есть ли у пользователя доступ к админ панели
-        if($mUsers->Can('INTER_TO_ADMIN')){
-            $this->accsess = true;
-        }
-        else{
-            $this->accsess = false;
-        }
+        if(!$mUsers->Can('INTER_TO_ADMIN')){
+            header("loation:index.php?c=login");
+        }   
         // Засекаем время начала обработки запроса.
         $this->start_time = microtime(true);
     }
@@ -55,9 +47,8 @@ abstract class C_Base extends C_Controller
     {
         // Основной шаблон всех страниц.
         $vars = array('content' => $this->content,
-                      'title' =>$this->title,
                       'name_user' =>$this->name,
-                      'accsess' =>$this->accsess);          
+                      );          
         $page = $this->View('/admin/tpl_main_admin.php', $vars);
                         
         // Время обработки запроса.

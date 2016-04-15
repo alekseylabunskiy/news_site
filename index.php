@@ -36,6 +36,10 @@ switch ($_GET['a']) {
   case 'admin_panel':
     $controller = new A_Base_admin();
     break;
+  case 'red_articles':
+    $controller = new A_Articles();
+    break;
+  
 }
 // Обработка запроса.
 $controller->Request();
