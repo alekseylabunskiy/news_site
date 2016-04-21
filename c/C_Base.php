@@ -60,7 +60,8 @@ abstract class C_Base extends C_Controller
                       'name_user' =>$this->name,
                       'accsess' =>$this->accsess);          
         $page = $this->View('tpl_main.php', $vars);
-                        
+        
+                       
         // Время обработки запроса.
         $time = microtime(true) - $this->start_time;        
         $page .= "<!-- Время генерации страницы: $time сек.-->";

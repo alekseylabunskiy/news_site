@@ -20,7 +20,7 @@
                 <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Добавить</a></li>
+                  <li><a href="index.php?a=red_articles&add_articles">Добавить</a></li>
                   <li><a href="index.php?a=red_articles">Редактировать</a></li>
                 </ul>
             </li>

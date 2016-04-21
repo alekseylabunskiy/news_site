@@ -24,7 +24,7 @@ class A_Articles extends A_Base_admin
     protected function OnInput()
     {
         parent::OnInput();
-    
+        
         //вносим изменения в статью
         if (isset($_POST['edit_article'])) {
             $obj = ['title'=> $this->articles->Clean($_POST['edit_title']),
@@ -33,29 +33,36 @@ class A_Articles extends A_Base_admin
                     'update_at' => date("Y-m-d H:i:s"),
                     'category' => $this->articles->Clean($_POST['edit_category']), 
             ];
+
             $id = $this->articles->Clean($_GET['id_red']);
             $this->update = $this->articles->UpdateArticles('articles',$obj,$id);
-         } 
+         }
+        $this->list = $this->articles->getArticles('articles',100);
+
+
+        if (isset($_POST['search_words'])) {
+            $this->list = $this->articles->SearchArt($_POST['search_words']);
+        }
         //удаляем статью
         if (isset($_GET['delete'])) {
             $id = $this->articles->Clean($_GET['delete']);
             $this->articles->DeleteArticles($id);
-         } 
+        } 
         //одна статья
         if (isset($_GET['id_red']) && $_GET['id_red'] !=null) {
             $this->one = $this->articles->getOneArticle('articles',$_GET['id_red']);
         } 
-        $this->list = $this->articles->getArticles('articles',100);  
     }
   //
   // Виртуальный генератор HTML.
   //
     protected function OnOutput() 
-    {       
+    {   
         // Генерация содержимого страницы.
         $vars = array('articles' => $this->list);
 
         $this->content = $this->View('/admin/tpl_articles.php', $vars);
+
         //если передан GET на редактирование статьи 
         if (isset($_GET['id_red'])) {
             
@@ -63,7 +70,13 @@ class A_Articles extends A_Base_admin
 
             $this->content = $this->View('/admin/tpl_edit_articles.php', $vars);
         }
+        //добавляем статью
+        if (isset($_GET['add_articles'])) {
+           
+            $vars = array();
 
+            $this->content = $this->View('/admin/tpl_add_article.php', $vars);
+        }
         // C_Base.
         parent::OnOutput();
     }

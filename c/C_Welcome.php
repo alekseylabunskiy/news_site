@@ -15,6 +15,7 @@ class C_Welcome extends C_Base
       parent::OnInput();
 
 	    $articles = M_Articles::Instance();
+      
       //список последних новостей
       $this->list_laitest_news = $articles->getArticles('articles',"1,4");
       //одна последняя новость
@@ -27,6 +28,7 @@ class C_Welcome extends C_Base
       $this->world = $articles->getArticlesCategory('articles',1,9);
       //мир список
       $this->world_list = $articles->getArticlesCategory('articles','1,3',9);
+
       //бизнес одна новость
       $this->bisness = $articles->getArticlesCategory('articles',1,2);
       //бизнес список
@@ -39,10 +41,11 @@ class C_Welcome extends C_Base
       $this->helth = $articles->getArticlesCategory('articles','1,3',5);
       //техно список
       $this->tech = $articles->getArticlesCategory('articles','1,3',6);
-      //популярные статьи
+     /* //популярные статьи
       $this->pop_articles = $articles->popularArticles(3);
-      //последние прокоментированные статьи
+      *///последние прокоментированные статьи
       $this->laitest_coments = $articles->lastCommentedArticles();
+      
     }
 
     //

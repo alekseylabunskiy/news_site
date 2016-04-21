@@ -30,8 +30,9 @@ class M_Articles
             $result = $this->db->Select($query);
             return $result;
     }
-    public function SearchArt($search_words){
-        $query = "SELECT * FROM articles WHERE id LIKE '%{$search_words}%'";
+    //функция поиска для ajax запросов в админке
+    public function SearchArt($field,$search_words){
+        $query = "SELECT * FROM articles WHERE {$field} LIKE '%{$search_words}%'";
             $result = $this->db->Select($query);
             return $result;
     }

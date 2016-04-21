@@ -39,7 +39,9 @@ switch ($_GET['a']) {
   case 'red_articles':
     $controller = new A_Articles();
     break;
-  
+  case 'ajax_request':
+    $controller = new C_Ajax();
+    break;  
 }
 // Обработка запроса.
 $controller->Request();

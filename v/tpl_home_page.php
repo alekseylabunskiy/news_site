@@ -263,7 +263,7 @@
                   <article>
                     <div class="photo"><a href="index.php?c=post&id=<?=$list['id']?>"><img src="v/content_Images/images/86/<?=$list['image']?>" alt="Photo"/></a></div>
                     <div class="details">
-                      <h4 class="title"><a href="#"><?=$list['title']?></a></h4>
+                      <h4 class="title"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></h4>
                       <p class="date">
                         <time datetime="2012-01-21"><?=date("d.m.Y",strtotime($list['create_at']))." "?></time>
                         <span class="comments_count"><a href="index.php?c=post&id=<?=$list['id']?>&#comment_form"><?=$list['count_coments']?></a></span></p>
@@ -280,7 +280,7 @@
                   <article>
                     <div class="photo"><a href="#"><img src="v/images/bg_user.png" alt="Photo"/></a></div>
                     <div class="details">
-                      <h4 class="title"><a href="#"><?=$list['name']?></a> on <a href="#"><?=$list['title']?></a></h4>
+                      <h4 class="title"><a href="#"><?=$list['name']?></a> on <a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></h4>
                       <p class="date">
                         <time datetime="2012-01-29"><?=$list['create_at']?></time>
                       </p>
