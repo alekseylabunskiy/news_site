@@ -103,6 +103,44 @@ class M_Articles
         $result = $this->db->Delete('articles', $where);
             return $result;
     }
+    //добавляем статью
+    public function addArticles($title,$content,$author,$image,$category){
+        //создаем и очищаем обьект для занеснеия в бд
+        $obj = ['title'=> $this->Clean($title),
+                'content' => $this->Clean($content),
+                'author' => $this->Clean($author),
+                'image' => $this->Clean($image),
+                'create_at' => date("Y-m-d H:i:s"),
+                'category' => $this->Clean($category), 
+            ];
+        //заносим в базу        
+        $this->insert =$this->db->Insert('articles',$obj);
+
+        return $this->insert;
+    }
+    //устанавливаем значение строчки "коментарии"
+    public function stringComent($value){
+        $text = '';
+        switch ($value) {
+            case '1':
+                $text = 'Комментарий';
+                break;
+            case '2':
+                $text = 'Комментария';
+                break;
+            case '3':
+                $text = 'Комментария';
+                break;
+            case '4':
+                $text = 'Комментария';
+                break;
+            default:
+                $text = 'Комментариев';
+                break;            
+        }
+        return $text;
+    }
+
 
 }
 

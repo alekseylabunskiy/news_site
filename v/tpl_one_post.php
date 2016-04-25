@@ -45,14 +45,17 @@
                   </ul>
                 </section>
                 <section id="comments">
-                  <h3 class="block_title"><?=$article['count_coments']?> коментариев</h3>
+                  <h3 class="block_title"><?=$article['count_coments']?> <?=$description_count_com?></h3>
                   <ul>
+                  <div id="div_com"></div>
+                   <div id="old_com" > 
                    <?foreach($coments as $list):?>
+                    <div id="comm">
                     <li>
                       <div class="details">
                         <div class="photo"><a href="#"><img src="v/images/bg_user.png" alt="Photo"/></a></div>
                         <div class="name">
-                          <h4 class="title"><a href="#"><?=$list['name']?></a></h4>
+                          <h4 class="title"><a href="#" id="author_message"><?=$list['name']?></a></h4>
                           <p class="date">
                             <time datetime="2012-01-29"><?=date('d.m.Y H:i',strtotime($list['create_at']))?></time>
                           </p>
@@ -62,18 +65,19 @@
                         <p><?=$list['text_coment']?></p>
                       </div>
                     </li>
-                    <hr/>
+                    </div>
                     <?endforeach?>
+                    </div>
                   </ul>
                 </section>
                 <div id="comment_form">
                   <h3 class="block_title">Оставить коментарий</h3>
-                  <form action="index.php?c=post&id=<?=$get?>" method="post">
+                  <form action="index.php?c=post&id=<?=$get?>" method="post" id="comment_form">
                     <div class="form-item">
                       <textarea placeholder="<?=$alert?>" class="form-textarea" id="edit-submitted-message" name="submitted_comment" rows="5" cols="60"></textarea>
                     </div>
                     <div id="edit-actions">
-                      <button type="submit" name="sub_coment"><span class="view_all_medium"><span><span>Опубликовать</span></span></span></button>
+                      <button type="submit" name="sub_coment" id="add_com"><span class="view_all_medium"><span><span>Опубликовать</span></span></span></button>
                     </div>
                   </form>
                 </div>

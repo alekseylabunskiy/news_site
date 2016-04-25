@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="v/js/bootstrap.min.js"></script>
     <script src="v/js/searchform.js"></script>
+    <script src="v/js/comentslist.js"></script>
 </head>
 <body>
     <div id="adm-header">
@@ -20,8 +21,8 @@
                 <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="index.php?a=red_articles&add_articles">Добавить</a></li>
-                  <li><a href="index.php?a=red_articles">Редактировать</a></li>
+                    <li><a href="index.php?a=red_articles&add_articles">Добавить</a></li>
+                    <li><a href="index.php?a=red_articles">Редактировать</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -30,8 +31,8 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Добавить/удалить галерею</a></li>
-                      <li><a href="#">Добавить/Удалить фото</a></li>
+                        <li><a href="#">Добавить/удалить галерею</a></li>
+                        <li><a href="#">Добавить/Удалить фото</a></li>
                     </ul>
             </li>
             <li class="dropdown">
@@ -40,8 +41,8 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Редактировать</a></li>
-                      <li><a href="#">Добавить/Удалить</a></li>
+                        <li><a href="#">Редактировать</a></li>
+                        <li><a href="#">Добавить/Удалить</a></li>
                     </ul>
             </li>
             <li class="dropdown">
@@ -50,8 +51,17 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Редактировать</a></li>
-                      <li><a href="#">Добавить/Удалить</a></li>
+                        <li><a href="#">Редактировать</a></li>
+                        <li><a href="#">Добавить/Удалить</a></li>
+                    </ul>   
+            </li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                Загрузить фото
+                <b class="caret"></b>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?a=upload_files">Загрузить</a></li>                      
                     </ul>   
             </li>
             <li class="dropdown">

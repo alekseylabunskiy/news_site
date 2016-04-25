@@ -62,7 +62,19 @@
         <td>    
             <form action="index.php?a=red_articles" role="form" method="get">
                 <div class="form-group">
-                    <input type="text" id="search_category" class="form-control">
+                    <select name="add_cathegory_art" class="form-control" id="search_category">
+                        <option selected></option>
+                        <option value="1">Украина</option>
+                        <option value="2">Бизнесс</option>
+                        <option value="3">Спорт</option>
+                        <option value="4">Развлечения</option>
+                        <option value="5">Здоровье</option>
+                        <option value="6">Техно</option>
+                        <option value="7">Погода</option>
+                        <option value="8">Выбор редактора</option>
+                        <option value="9">Мир</option>
+                    </select>
+                    
                     <input id="count_chars_category" type="hidden" value="0" />
                     <input id="re_chars_category" type="hidden" value="" />
                 </div>

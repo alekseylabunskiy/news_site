@@ -42,6 +42,8 @@ class C_Page extends C_Base
         $this->coment = $this->coments->getComentsToArt($this->get);
         //навигация)
         $this->bcamp = $this->articles->Breadcumps($this->art[0]['category']);
+        //устанавливаем значение строчки "коментарии"
+        $this->com = $this->articles->stringComent($this->art[0]['count_coments']);
     }
 
     //
@@ -55,7 +57,8 @@ class C_Page extends C_Base
                       'coments' => $this->coment,
                       'get' => $this->get,
                       'alert' => $this->alert,
-                      'bcamp' => $this->bcamp[0]);
+                      'bcamp' => $this->bcamp[0],
+                      'description_count_com' =>$this->com);
         
         $this->content = $this->View('tpl_one_post.php', $vars);
 

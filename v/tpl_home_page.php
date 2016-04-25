@@ -104,7 +104,7 @@
                 <div class="left">
                   <article>
                   <?foreach($world as $list):?>
-                    <p><img src="/v/content_Images/images/458/<?=$list['image']?>" alt="World News"/></p>
+                    <p><img src="/v/content_Images/images/216/<?=$list['image']?>" alt="World News"/></p>
                     <hgroup>
                       <h4 class="title"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></h4>
                     </hgroup>
@@ -140,7 +140,7 @@
                 <div class="left">
                   <article>
                     <?foreach($bisness as $list):?>
-                    <p><img src="/v/content_Images/images/458/<?=$list['image']?>" alt="World News"/></p>
+                    <p><img src="/v/content_Images/images/216/<?=$list['image']?>" alt="World News"/></p>
                     <hgroup>
                       <h4 class="title"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></h4>
                     </hgroup>

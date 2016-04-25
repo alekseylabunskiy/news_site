@@ -319,7 +319,7 @@ h4.title span.photos{color:#828181;font-size:12px;font-weight:normal;}
 #comment_form, #contact_form{padding-top:10px;background:none;}
 #comment_form label, #contact_form label{width:60px;float:left;margin-top:5px;}
 #comment_form textarea, #contact_form textarea{width:365px;height:179px;overflow:auto;}
-#comment_form #edit-actions, #contact_form #edit-actions{padding:10px 0 0 70px;}
+#comment_form #edit-actions, #contact_form #edit-actions{padding:0px 0 0 0px;}
 #reg_form{margin-left: 200px;margin-bottom: 100px;margin-top: 10px;}
 #form_search_404{overflow:hidden;margin-bottom:20px;}
 #form_search_404 .form-type-textfield{background:url(../images/bg_search_content.png) no-repeat 0 -58px;float:left;padding-left:15px;}
@@ -395,3 +395,7 @@ ul.sitemap li ul{margin-top:15px;}
 #adm_list_articles th{text-align: center;}
 #adm_list_articles td{text-align: center;}
 #adm_list_articles td a{ padding: 0px;}
+.panel-primary-admin{margin: 25px;}
+#upload_files{margin: 25px;}
+#img_add_art{width: 120px;margin: 5px;}
+#comm{margin: 10px;border-radius: 10px; padding: 5px; box-shadow: 5px 5px 2px; background-color:#EBEBEB;}

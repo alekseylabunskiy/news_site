@@ -1,9 +1,8 @@
-<div id="search_result"></div>
-<div class="panel panel-primary">
+<div class="panel panel-primary" class="panel-primary-admin">
  <div class="panel-body" style="text-align: center;"><h3>Редактор Статьи</h3></div>
 </div>
 
-<form role="form" action="index.php?a=red_articles&id_red=<?=$article['id']?>" method="post">
+<form role="form" action="index.php?a=red_articles&id_red=<?=$article['id']?>" method="post"  class="panel-primary-admin">
     <div class="form-group">
         <label for="edit_title">Заголовок</label>
         <input type="text" class="form-control" name="edit_title" value="<?=$article['title']?>" />  
@@ -15,6 +14,9 @@
     <div class="form-group">   
         <label for="edit_category">Изображение</label>
         <input type="text" class="form-control" name="edit_image" value="<?=$article['image']?>" /> 
+    </div>
+    <div>
+        <img class="img-rounded" src="v/content_Images/images/216/<?=$article['image']?>" alt="<?=$article['image']?>">
     </div>
     <div class="form-group">   
         <label for="edit_category">Категория</label>

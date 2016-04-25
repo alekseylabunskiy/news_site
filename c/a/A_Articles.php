@@ -4,18 +4,13 @@
 //
 class A_Articles extends A_Base_admin
 {
-    protected $needLogin;   // необходимость авторизации 
-    protected $user;        // авторизованный пользователь
-    private $start_time;    // время начала генерации страницы
-    
     //
     // Конструктор.
     //
     function __construct()
     {
-        parent::__construct();
-
         $this->articles = M_Articles::Instance();
+        $this->mysqli = M_MSQL::Instance();
     }
     
     //
@@ -24,8 +19,15 @@ class A_Articles extends A_Base_admin
     protected function OnInput()
     {
         parent::OnInput();
-        
+        //
+        //Добавляем статью
+        //
+        if (isset($_POST['insert_art'])) {
+            $this->articles->addArticles($_POST['add_title_art'],$_POST['add_content_art'],$_POST['add_author_art'],$_POST['add_image_art'],$_POST['add_cathegory_art']);
+        }
+        //
         //вносим изменения в статью
+        //
         if (isset($_POST['edit_article'])) {
             $obj = ['title'=> $this->articles->Clean($_POST['edit_title']),
                     'content' => $this->articles->Clean($_POST['edit_content']),
@@ -36,26 +38,27 @@ class A_Articles extends A_Base_admin
 
             $id = $this->articles->Clean($_GET['id_red']);
             $this->update = $this->articles->UpdateArticles('articles',$obj,$id);
-         }
-        $this->list = $this->articles->getArticles('articles',100);
-
-
-        if (isset($_POST['search_words'])) {
-            $this->list = $this->articles->SearchArt($_POST['search_words']);
         }
+        $this->list = $this->articles->getArticles('articles',100);
+        //
         //удаляем статью
+        //
         if (isset($_GET['delete'])) {
             $id = $this->articles->Clean($_GET['delete']);
             $this->articles->DeleteArticles($id);
-        } 
+        }
+        // 
         //одна статья
+        //
         if (isset($_GET['id_red']) && $_GET['id_red'] !=null) {
             $this->one = $this->articles->getOneArticle('articles',$_GET['id_red']);
         } 
+        //список изображений
+        $this->list_images = $this->mysqli->Select("SELECT * FROM `images` ORDER BY id DESC");
     }
-  //
-  // Виртуальный генератор HTML.
-  //
+    //
+    // Виртуальный генератор HTML.
+    //
     protected function OnOutput() 
     {   
         // Генерация содержимого страницы.
@@ -73,7 +76,7 @@ class A_Articles extends A_Base_admin
         //добавляем статью
         if (isset($_GET['add_articles'])) {
            
-            $vars = array();
+            $vars = array('images' => $this->list_images);
 
             $this->content = $this->View('/admin/tpl_add_article.php', $vars);
         }

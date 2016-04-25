@@ -42,6 +42,9 @@ switch ($_GET['a']) {
   case 'ajax_request':
     $controller = new C_Ajax();
     break;  
+  case 'upload_files':
+    $controller = new A_Images();
+    break;  
 }
 // Обработка запроса.
 $controller->Request();

@@ -16,6 +16,8 @@
 <script src="v/js/jquery.anythingslider.min.js"></script>
 <script src="v/js/jquery.colorbox-min.js"></script>
 <script src="v/js/script.js"></script>
+<script src="v/js/addComents.js"></script>
+<script src="v/js/comentsList.js"></script>
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->
