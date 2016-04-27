@@ -58,7 +58,7 @@
             <nav>
               <ul>
                 <li class="first active"><a href="index.php"><span class="bg">Главная</span></a></li>
-                <li><a href="#"><span class="bg">Галерея</span></a></li>
+                <li><a href="index.php?c=gallery_list"><span class="bg">Галерея</span></a></li>
                 <li><a href="index.php?c=categories&id_category=world"><span class="bg">Мир</span></a></li>
                 <li><a href="index.php?c=categories&id_category=ukraine"><span class="bg">Украина</span></a></li>
                 <li><a href="index.php?c=categories&id_category=bisness"><span class="bg">Бизнесс</span></a></li>

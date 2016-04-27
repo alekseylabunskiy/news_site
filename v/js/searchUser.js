@@ -1,50 +1,45 @@
 //функция Trigger осуществляет поиск по "не пустому" значению поля  и подключает нужную функцию поиска контента. 
-function Trigger(){
+function Trigger_user(){
    //ищем заполненное поле
-   var maskInputwords = $("#search_words").val();
-   var maskInputtitle = $("#search_title").val();
-   var maskInputcontent = $("#search_content").val();
-   var maskInputcreate_at = $("#search_create_at").val();
-   var maskInputupdate_at = $("#search_update_at").val();
-   var maskInputcategory = $("#search_category").val();
+   var maskInputid_user = $("#search_id_user").val();
+   var maskInputlogin_user = $("#search_login_user").val();
+   var maskInputemail_user = $("#search_email_user").val();
+   var maskInputrole_user = $("#search_role_user").val();
+   var maskInputname_user = $("#search_name_user").val();
    //если пустые все поля, то выводим список всех новостей 
-   if (maskInputwords == '' && maskInputtitle == '' && maskInputcontent == '' && maskInputcreate_at == '' && maskInputupdate_at == '' && maskInputcategory == '') {
-      $('#adm_list_articles_old').show();
-      $('#adm_list_articles').hide();
-      return false;
+   if (maskInputid_user == '' && maskInputlogin_user == '' && maskInputemail_user == '' && maskInputrole_user == '' && maskInputname_user == '') {
+      $('#adm_list_users_main').show();
+      $('#adm_list_users_updated').hide();
    }
    //если поле заполнено то подключаем нужную функцию
    else{
-      if (maskInputwords != '') {
-         getSearchInput1();
+      if (maskInputid_user != '') {
+         getSearchInput();
       }
-      if (maskInputtitle != '') {
-         getSearchTitle();
+      if (maskInputlogin_user != '') {
+         getSearchLogin();
       }
-      if (maskInputcontent != '') {
-         getSearchContent();
+      if (maskInputemail_user != '') {
+         getSearchMail();
       }
-      if (maskInputcreate_at != '') {
-         getSearchCreate_at();
+      if (maskInputrole_user != '') {
+         getSearchRole();
       }
-      if (maskInputupdate_at != '') {
-         getSearchUpdate_at();
-      }
-      if (maskInputcategory != '') {
-         getSearchCategory();
+      if (maskInputname_user != '') {
+         getSearchName();
       }
    }
 }
 
-function getSearchInput1(){
-   var maskInput = $("#search_words").val();
+function getSearchInput(){
+   var maskInput = $("#search_id_user").val();
         
-   var cStart = $("#count_chars").val();
+   var cStart = $("#count_chars_id_user").val();
    var countChars = maskInput.replace(/\s+/g, "").length;
    if(countChars != 0)
    {
-      var cStartw = $("#re_chars").val();
-      var searchInput = $("#search_words").val();
+      var cStartw = $("#re_chars_id_user").val();
+      var searchInput = $("#search_id_user").val();
    }
    else
    {
@@ -56,7 +51,7 @@ function getSearchInput1(){
       $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_words:searchInput,
+         data:{search_id_user:searchInput,
                a:'ajax_request'},
          success: function(data){                            
                      $('#search_result').html(data); 
@@ -81,21 +76,21 @@ function getSearchInput1(){
                },
          dataType:"text",        
       }); 
-      $('#adm_list_articles_old').hide();
-      $("#count_chars").val(countChars);
-      $("#re_chars").val(searchInput);
+      $('#adm_list_users_main').hide();
+      $("#count_chars_id_user").val(countChars);
+      $("#re_chars_id_user").val(searchInput);
    }
 }
       
-function getSearchTitle(){
-   var maskInput = $("#search_title").val();
+function getSearchLogin(){
+   var maskInput = $("#search_login_user").val();
    
-   var cStart = $("#count_chars_title").val();
+   var cStart = $("#count_chars_login_user").val();
    var countChars = maskInput.replace(/\s+/g, "").length;
    if(countChars != 0)
    {
-      var cStartw = $("#re_chars_title").val();
-      var searchInput = $("#search_title").val();
+      var cStartw = $("#re_chars_login_user").val();
+      var searchInput = $("#search_login_user").val();
    }
    else
    {
@@ -107,7 +102,7 @@ function getSearchTitle(){
       $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_title:searchInput,
+         data:{search_login_user:searchInput,
                a:'ajax_request'},
          success: function(data){                            
                      $('#search_result').html(data); 
@@ -133,23 +128,23 @@ function getSearchTitle(){
          dataType:"text",        
       }); 
       
-      $('#adm_list_articles_old').hide();
-      $("#count_chars_title").val(countChars);
-      $("#re_chars_title").val(searchInput);
+      $('#adm_list_users_main').hide();
+      $("#count_chars_login_user").val(countChars);
+      $("#re_chars_login_user").val(searchInput);
    }
 }
-function getSearchContent(){
-   var maskInput = $("#search_content").val();
+function getSearchMail(){
+   var maskInput = $("#search_email_user").val();
    if (maskInput == '') {
       return false;
 
    }
-   var cStart = $("#count_chars_content").val();
+   var cStart = $("#count_chars_email_user").val();
    var countChars = maskInput.replace(/\s+/g, "").length;
    if(countChars != 0)
    {
-      var cStartw = $("#re_chars_content").val();
-      var searchInput = $("#search_content").val();
+      var cStartw = $("#re_chars_email_user").val();
+      var searchInput = $("#search_email_user").val();
    }
    else
    {
@@ -161,7 +156,7 @@ function getSearchContent(){
       $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_content:searchInput,
+         data:{search_email_user:searchInput,
                a:'ajax_request'},
          success: function(data){                            
                      $('#search_result').html(data); 
@@ -187,23 +182,23 @@ function getSearchContent(){
          dataType:"text",        
       }); 
       
-      $('#adm_list_articles_old').hide();
-      $("#count_chars_content").val(countChars);
-      $("#re_chars_content").val(searchInput);
+      $('#adm_list_users_main').hide();
+      $("#count_chars_email_user").val(countChars);
+      $("#re_chars_email_user").val(searchInput);
    }
 }
-function getSearchCreate_at(){
-   var maskInput = $("#search_create_at").val();
+function getSearchRole(){
+   var maskInput = $("#search_role_user").val();
    if (maskInput == '') {
       return false;
 
    }
-   var cStart = $("#count_chars_create_at").val();
+   var cStart = $("#count_chars_role_user").val();
    var countChars = maskInput.replace(/\s+/g, "").length;
    if(countChars != 0)
    {
-      var cStartw = $("#re_chars_create_at").val();
-      var searchInput = $("#search_create_at").val();
+      var cStartw = $("#re_chars_role_usert").val();
+      var searchInput = $("#search_role_user").val();
    }
    else
    {
@@ -215,7 +210,7 @@ function getSearchCreate_at(){
       $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_create_at:searchInput,
+         data:{search_role_user:searchInput,
                a:'ajax_request'},
          success: function(data){                            
                      $('#search_result').html(data); 
@@ -241,24 +236,24 @@ function getSearchCreate_at(){
          dataType:"text",        
       }); 
 
-      $('#adm_list_articles_old').hide();
-      $("#count_chars_create_at").val(countChars);
-      $("#re_chars_create_at").val(searchInput);
+      $('#adm_list_users_main').hide();
+      $("#count_chars_role_user").val(countChars);
+      $("#re_chars_role_user").val(searchInput);
    }
 }      
 
-function getSearchUpdate_at(){
-   var maskInput = $("#search_update_at").val();
+function getSearchName(){
+   var maskInput = $("#search_name_user").val();
    if (maskInput == '') {
       return false;
 
    }
-   var cStart = $("#count_chars_update_at").val();
+   var cStart = $("#count_chars_name_user").val();
    var countChars = maskInput.replace(/\s+/g, "").length;
    if(countChars != 0)
    {
-      var cStartw = $("#re_chars_update_at").val();
-      var searchInput = $("#search_update_at").val();
+      var cStartw = $("#re_chars_name_user").val();
+      var searchInput = $("#search_name_user").val();
    }
    else
    {
@@ -270,7 +265,7 @@ function getSearchUpdate_at(){
       $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_update_at:searchInput,
+         data:{search_name_user:searchInput,
                a:'ajax_request'},
          success: function(data){                            
                      $('#search_result').html(data); 
@@ -296,68 +291,14 @@ function getSearchUpdate_at(){
          dataType:"text",        
       });
 
-      $('#adm_list_articles_old').hide();
-      $("#count_chars_update_at").val(countChars);
-      $("#re_chars_update_at").val(searchInput);
+      $('#adm_list_users_main').hide();
+      $("#count_chars_name_user").val(countChars);
+      $("#re_chars_name_user").val(searchInput);
    }
 }   
 
-function getSearchCategory(){
-   var maskInput = $("#search_category").val();
-   if (maskInput == '') {
-      return false;
-
-   }
-   var cStart = $("#count_chars_category").val();
-   var countChars = maskInput.replace(/\s+/g, "").length;
-   if(countChars != 0)
-   {
-      var cStartw = $("#re_chars_category").val();
-      var searchInput = $("#search_category").val();
-   }
-   else
-   {
-      var cStartw = "";
-      var searchInput = "";
-   }
-   if(cStart != countChars || cStartw != searchInput)
-   {  
-      $.ajax({
-         url:'index.php?a=ajax_request',
-         type:'POST',
-         data:{search_category:searchInput,
-               a:'ajax_request'},
-         success: function(data){                            
-                     $('#search_result').html(data); 
-                  },
-         error: function(jqXHR, exception)
-               {
-                  if (jqXHR.status === 0) {
-                     alert('НЕ подключен к интернету!');
-                  } else if (jqXHR.status == 404) {
-                     alert('НЕ найдена страница запроса [404])');
-                  } else if (jqXHR.status == 500) {
-                     alert('НЕ найден домен в запросе [500].');
-                  } else if (exception === 'parsererror') {
-                     alert("Ошибка в коде: \n"+jqXHR.responseText);
-                  } else if (exception === 'timeout') {
-                     alert('Не ответил на запрос.');
-                  } else if (exception === 'abort') {
-                     alert('Прерван запрос Ajax.');
-                  } else {
-                     alert('Неизвестная ошибка:\n' + jqXHR.responseText);
-                  }
-               },
-         dataType:"text",        
-      }); 
-
-      $('#adm_list_articles_old').hide();
-      $("#count_chars_category").val(countChars);
-      $("#re_chars_category").val(searchInput);
-   }
-}  
 
 $(document).ready(function(){
-   setInterval(Trigger,1000);
+   setInterval(Trigger_user,1000);
 }); 
         

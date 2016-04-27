@@ -6,7 +6,6 @@ abstract class C_Base extends C_Controller
 {
     protected $needLogin;   // необходимость авторизации 
     protected $user;        // авторизованный пользователь
-    protected $title = 'Site Name';
     private $start_time;    // время начала генерации страницы
     
     //

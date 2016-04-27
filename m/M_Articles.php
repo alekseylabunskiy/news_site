@@ -31,11 +31,12 @@ class M_Articles
             return $result;
     }
     //функция поиска для ajax запросов в админке
-    public function SearchArt($field,$search_words){
-        $query = "SELECT * FROM articles WHERE {$field} LIKE '%{$search_words}%'";
+    public function SearchArt($table,$field,$search_words){
+        $query = "SELECT * FROM {$table} WHERE {$field} LIKE '%{$search_words}%'";
             $result = $this->db->Select($query);
             return $result;
     }
+    
     //статьи по категориям с добавлением в результирующий массив колличество коментариев
     public function getArticlesCategory($table,$limit,$category){
         $query = "SELECT * FROM {$table} WHERE category = {$category} ORDER BY id DESC LIMIT {$limit}";
@@ -139,6 +140,28 @@ class M_Articles
                 break;            
         }
         return $text;
+    }
+    //
+    //Редактируем данные пользователя
+    //
+    public function edit_Profile_user($login,$email,$role,$password,$name){
+        $login = $this->Clean($login);
+        $email = $this->Clean($email);
+        $role = $this->Clean($role);
+        $password = $this->Clean($password);
+        $name = $this->Clean($name);
+
+        $obj = ['login' => $login,
+                'password' => $password,
+                'email' => $email,
+                'id_role' => $role,
+                'name' => $name];
+        $id_user = $_GET['id_user_red'];        
+        $where = "id_user = $id_user";
+
+        $result = $this->db->Update('users',$obj,$where);
+
+        return result;
     }
 
 

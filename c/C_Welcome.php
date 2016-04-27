@@ -32,18 +32,18 @@ class C_Welcome extends C_Base
         //бизнес одна новость
         $this->bisness = $articles->getArticlesCategory('articles',1,2);
         //бизнес список
-        $this->bisness_list = $articles->getArticlesCategory('articles','1,3',2);
+        $this->bisness_list = $articles->getArticlesCategory('articles',"0,3",2);
         //спорт список
-        $this->sport = $articles->getArticlesCategory('articles','1,3',3);
+        $this->sport = $articles->getArticlesCategory('articles',"0,3",3);
         //развлечения список
-        $this->intertaiment = $articles->getArticlesCategory('articles','1,3',4);
+        $this->intertaiment = $articles->getArticlesCategory('articles',"0,3",4);
         //Здоровье список
-        $this->helth = $articles->getArticlesCategory('articles','1,3',5);
+        $this->helth = $articles->getArticlesCategory('articles',"0,3",5);
         //техно список
-        $this->tech = $articles->getArticlesCategory('articles','1,3',6);
-        /* //популярные статьи
+        $this->tech = $articles->getArticlesCategory('articles',"0,3",6);
+         //популярные статьи
         $this->pop_articles = $articles->popularArticles(3);
-        *///последние прокоментированные статьи
+        //последние прокоментированные статьи
         $this->laitest_coments = $articles->lastCommentedArticles();
       
     }

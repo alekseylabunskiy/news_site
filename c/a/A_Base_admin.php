@@ -34,7 +34,7 @@ class A_Base_admin extends C_Controller
 
         //проверяем есть ли у пользователя доступ к админ панели
         if(!$mUsers->Can('INTER_TO_ADMIN')){
-            header("loation:index.php?c=login");
+            header("Location:index.php?c=login");
         }   
         // Засекаем время начала обработки запроса.
         $this->start_time = microtime(true);

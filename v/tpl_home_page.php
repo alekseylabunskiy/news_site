@@ -184,7 +184,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="#" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_entertainment" class="block one_fourth">
@@ -195,7 +195,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="#" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_health" class="block one_fourth">
@@ -206,7 +206,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="#" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_tech" class="block last one_fourth">
@@ -217,7 +217,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="#" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
           </div>

@@ -27,6 +27,9 @@ switch ($_GET['c'])
       break; 
   case 'categories':
     $controller = new C_Categories();
+      break;
+  case 'gallery_list':
+    $controller = new C_Gallery_list();
       break;          
   default:
     $controller = new C_Welcome();
@@ -42,6 +45,9 @@ switch ($_GET['a']) {
   case 'ajax_request':
     $controller = new C_Ajax();
     break;  
+  case 'edit_users':
+    $controller = new A_Users();
+    break;
   case 'upload_files':
     $controller = new A_Images();
     break;  

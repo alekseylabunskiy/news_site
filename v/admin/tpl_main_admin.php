@@ -8,8 +8,10 @@
     
     <script src="https://code.jquery.com/jquery.min.js"></script>
     <script src="v/js/bootstrap.min.js"></script>
-    <script src="v/js/searchform.js"></script>
     <script src="v/js/comentslist.js"></script>
+    <script src="v/js/showImagesInEditArticles.js"></script>
+    <script src="v/js/searchUser.js"></script>
+    <script src="v/js/searchForm.js"></script>
 </head>
 <body>
     <div id="adm-header">
@@ -41,7 +43,7 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Редактировать</a></li>
+                        <li><a href="index.php?a=edit_users">Редактировать</a></li>
                         <li><a href="#">Добавить/Удалить</a></li>
                     </ul>
             </li>

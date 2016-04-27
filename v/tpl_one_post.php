@@ -45,10 +45,10 @@
                   </ul>
                 </section>
                 <section id="comments">
+                  <div id="div_com"></div>
+                  <div id="old_com">
                   <h3 class="block_title"><?=$article['count_coments']?> <?=$description_count_com?></h3>
                   <ul>
-                  <div id="div_com"></div>
-                   <div id="old_com" > 
                    <?foreach($coments as $list):?>
                     <div id="comm">
                     <li>
@@ -66,9 +66,9 @@
                       </div>
                     </li>
                     </div>
-                    <?endforeach?>
-                    </div>
+                    <?endforeach?> 
                   </ul>
+                  </div>
                 </section>
                 <div id="comment_form">
                   <h3 class="block_title">Оставить коментарий</h3>
