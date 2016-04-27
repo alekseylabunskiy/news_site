@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
         <label for="add_image_art" class="control-label">Изображение</label> 
-        <select class="form-control" name="add_image_art" id="image_to_art">
+        <select class="form-control" name="add_image_art" id="image_to_art" >
             <option value="" selected>Выбераем фото</option>
                 <?php foreach($images as $list):?> 
                     <option value="<?=$list['name']?>"><?=$list['name']?></option>                    
@@ -28,18 +28,18 @@
     </div>
     <div class="form-group">
         <label for="add_cathegory_art" class="control-label">Категория</label>
-        <select name="add_cathegory_art" class="form-control" required>
-            <option selected>Категории</option>
-            <option value="1">Украина</option>
-            <option value="2">Бизнесс</option>
-            <option value="3">Спорт</option>
-            <option value="4">Развлечения</option>
-            <option value="5">Здоровье</option>
-            <option value="6">Техно</option>
-            <option value="7">Погода</option>
-            <option value="8">Выбор редактора</option>
-            <option value="9">Мир</option>
-        </select>
+            <select name="add_cathegory_art" class="form-control" required>
+                <option selected>Категории</option>
+                <option value="1">Украина</option>
+                <option value="2">Бизнесс</option>
+                <option value="3">Спорт</option>
+                <option value="4">Развлечения</option>
+                <option value="5">Здоровье</option>
+                <option value="6">Техно</option>
+                <option value="7">Погода</option>
+                <option value="8">Выбор редактора</option>
+                <option value="9">Мир</option>
+            </select>
     </div>
     <button name="insert_art" class="btn btn-success">Вставить новость</button>
 </form>

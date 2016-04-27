@@ -50,7 +50,7 @@ switch ($_GET['a']) {
     break;
   case 'upload_files':
     $controller = new A_Images();
-    break;  
+    break;    
 }
 // Обработка запроса.
 $controller->Request();

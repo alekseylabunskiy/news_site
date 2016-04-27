@@ -45,6 +45,23 @@ class M_Users
 		$this->msql->Delete('sessions', $where);
 	}
 
+	public function CreateUsr($login,$password,$mail,$role,$name){
+		$cleanedlogin = $this->articles->Clean($login);
+		$cleanedpassword = $this->articles->Clean($password);
+		$cleanedpassword = md5($cleanedpassword);
+		$cleanedmail = $this->articles->Clean($mail);
+		$cleanedrole = $this->articles->Clean($role);
+		$cleanedname = $this->articles->Clean($name);
+
+		$obj = ['login' => $cleanedlogin,
+				'password' => $cleanedpassword,
+				'email' => $cleanedmail,
+				'id_role' => $cleanedrole,
+				'name' => $cleanedname];
+		$result = $this->msql->Insert('users',$obj);
+
+		return $result;
+	}
 	//
 	// Авторизация
 	// $login 		- логин

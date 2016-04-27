@@ -44,7 +44,7 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php?a=edit_users">Редактировать</a></li>
-                        <li><a href="#">Добавить/Удалить</a></li>
+                        <li><a href="index.php?a=edit_users&add_new_user">Добавить</a></li>
                     </ul>
             </li>
             <li class="dropdown">

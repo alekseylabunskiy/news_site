@@ -20,14 +20,24 @@ class A_Users extends A_Base_admin
         $this->users = M_Users::Instance();
         $this->articles = M_Articles::Instance();
 
-        //редактируем данные пользователя        
-        if (isset($_POST['edit_profile'])) {
-           $this->articles->edit_Profile_user($_POST['edit_login'],$_POST['edit_email'],$_POST['edit_role'],$_POST['edit_password'],$_POST['edit_name']);
+        //добавляем пользователя
+        if (isset($_POST['create_user'])) {
+            if (!empty($_POST['add_login']) || !empty($_POST['add_password'])|| !empty($_POST['add_email'])) {
+                $this->users->CreateUsr($_POST['add_login'],$_POST['add_password'],$_POST['add_email'],$_POST['add_role'],$_POST['add_name']);
+            }
         }
+
+        //список ролей
+        $this->roles = $this->mysqli->Select("SELECT * FROM `roles` GROUP BY id_role DESC");
 
         //проверяем есть ли у пользователя доступ к данным пользователей
         if(!$this->users->Can('USERS_DATA')){
             header("Location:index.php?c=login");
+        }
+
+        //редактируем данные пользователя        
+        if (isset($_POST['edit_profile'])) {
+           $this->articles->edit_Profile_user($_POST['edit_login'],$_POST['edit_email'],$_POST['edit_role'],md5($_POST['edit_password']),$_POST['edit_name']);
         }
 
         //список пользователей
@@ -55,6 +65,13 @@ class A_Users extends A_Base_admin
                           'user' => $this->user[0]);
 
             $this->content = $this->View('/admin/tpl_edit_user.php', $vars);
+        }
+        //Передан GET на добавление юзера
+
+        if (isset($_GET['add_new_user'])) {
+            $vars = array('roles' => $this->roles);
+
+            $this->content = $this->View('/admin/tpl_new_user.php', $vars);
         }
        
         parent::OnOutput();

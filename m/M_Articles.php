@@ -88,8 +88,8 @@ class M_Articles
     }
     //последние прокоментированные статьи
     public function lastCommentedArticles(){
-        $query = "SELECT users.id_user,users.name,coments.id_coment,coments.id_user,coments.create_at,coments.id_article,coments.text_coment,articles.id,articles.title FROM users,coments,articles WHERE articles.id = coments.id_article ORDER BY coments.id_coment DESC LIMIT 2";
-        $result = $this->db->Select($query); 
+        $query = "SELECT coments.id_coment,coments.id_user,coments.id_article,coments.text_coment,users.id_user,users.name,articles.id,articles.title FROM coments,users,articles WHERE coments.id_user = users.id_user AND coments.id_article = articles.id ORDER BY id_coment DESC LIMIT 2";
+        $result = $this->db->Select($query);
         return $result;
     }
     //вносим изменения в статью

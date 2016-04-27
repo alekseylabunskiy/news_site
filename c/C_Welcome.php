@@ -45,6 +45,7 @@ class C_Welcome extends C_Base
         $this->pop_articles = $articles->popularArticles(3);
         //последние прокоментированные статьи
         $this->laitest_coments = $articles->lastCommentedArticles();
+        var_dump($this->laitest_coments);
       
     }
 

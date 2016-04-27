@@ -68,6 +68,7 @@
         <th>Почта</th>
         <th>Роль</th>
         <th>Имя</th>
+        <th>Действия</th>
     </tr>
     <?foreach($users as $list):?>
         <tr>
