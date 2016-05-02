@@ -26,7 +26,14 @@ class A_Users extends A_Base_admin
                 $this->users->CreateUsr($_POST['add_login'],$_POST['add_password'],$_POST['add_email'],$_POST['add_role'],$_POST['add_name']);
             }
         }
-
+        //
+        //Удаляем статью
+        //
+        if (isset($_GET['delete_user'])) {
+            $id = $_GET['delete_user'];
+            $where = "id_user = $id";
+            $this->mysqli->Delete('users',$where);
+        }
         //список ролей
         $this->roles = $this->mysqli->Select("SELECT * FROM `roles` GROUP BY id_role DESC");
 

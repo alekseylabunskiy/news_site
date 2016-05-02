@@ -55,7 +55,7 @@
                     <h4 class="title"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></h4>
                     <p class="date">
                       <time datetime="2012-01-24"><?=date("d.m.Y",strtotime($list['create_at']))." "?></time>
-                      <span class="comments_count"><a href="#"><?=$list['count_coments']?></a></span></p>
+                      <span class="comments_count"><a href="index.php?c=post&id=<?=$list['id']?>&#comment_form"><?=$list['count_coments']?></a></span></p>
                   </div>
                 </article>
               </div>
@@ -99,7 +99,7 @@
         <div id="content">
           <div class="region">
             <section id="block_world_news" class="block">
-              <h3 class="block_title_black">Мир<a href="#" class="view_all"><span><span>Все новости</span></span></a></h3>
+              <h3 class="block_title_black">Мир<a href="index.php?c=categories&id_category=world" class="view_all"><span><span>Все новости</span></span></a></h3>
               <div class="content">
                 <div class="left">
                   <article>
@@ -135,7 +135,7 @@
               </div>
             </section>
             <section id="block_business_news" class="block">
-              <h3 class="block_title_black">Бизнес<a href="#" class="view_all"><span><span>Все новости</span></span></a></h3>
+              <h3 class="block_title_black">Бизнес<a href="index.php?c=categories&id_category=bisness" class="view_all"><span><span>Все новости</span></span></a></h3>
               <div class="content">
                 <div class="left">
                   <article>
@@ -184,7 +184,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=categories&id_category=sport" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_entertainment" class="block one_fourth">
@@ -195,7 +195,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=categories&id_category=intertaiment" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_health" class="block one_fourth">
@@ -206,7 +206,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=categories&id_category=helth" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
             <aside id="block_tech" class="block last one_fourth">
@@ -217,7 +217,7 @@
                   <li class="first"><a href="index.php?c=post&id=<?=$list['id']?>"><?=$list['title']?></a></li>
                   <?endforeach?>
                 </ul>
-                <p><a href="index.php?c=post&id=<?=$list['id']?>" class="view_all"><span><span>Больше</span></span></a></p>
+                <p><a href="index.php?c=categories&id_category=tech" class="view_all"><span><span>Больше</span></span></a></p>
               </div>
             </aside>
           </div>

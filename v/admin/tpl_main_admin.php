@@ -12,6 +12,7 @@
     <script src="v/js/showImagesInEditArticles.js"></script>
     <script src="v/js/searchUser.js"></script>
     <script src="v/js/searchForm.js"></script>
+    <script src="v/js/searchComents.js"></script>
 </head>
 <body>
     <div id="adm-header">
@@ -53,7 +54,7 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Редактировать</a></li>
+                        <li><a href="index.php?a=redact_coments">Редактировать</a></li>
                         <li><a href="#">Добавить/Удалить</a></li>
                     </ul>   
             </li>

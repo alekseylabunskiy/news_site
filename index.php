@@ -48,6 +48,9 @@ switch ($_GET['a']) {
   case 'edit_users':
     $controller = new A_Users();
     break;
+  case 'redact_coments':
+    $controller = new A_Coments();
+    break;  
   case 'upload_files':
     $controller = new A_Images();
     break;    

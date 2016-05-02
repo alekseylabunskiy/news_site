@@ -12,15 +12,21 @@
         <textarea class="form-control" name="edit_content" id="" cols="30" rows="10"><?=$article['content']?></textarea>
     </div>
     <div class="form-group">   
-        <label for="edit_category">Изображение</label>
-        <input type="text" class="form-control" name="edit_image" value="<?=$article['image']?>" /> 
-    </div>
-    <div>
-        <img class="img-rounded" src="v/content_Images/images/216/<?=$article['image']?>" alt="<?=$article['image']?>">
-    </div>
+        <label for="edit_category">Текущее зображение</label><br />
+        <img src="/v/content_Images/images/216/<?=$article['image']?>" alt=""><br />
+        <div id="search_image"></div>  
+        <select class="form-control" name="edit_image" id="image_to_art" >
+            <option value="" selected>Выбераем фото</option>
+                <?php foreach($images as $list):?> 
+                    <option value="<?=$list['name']?>"><?=$list['name']?></option>                    
+                <?php endforeach?>
+                <option id="hidden_name" hidden></option>  
+                <option value="" id="hidden_inp" hidden></option> 
+        </select>
     <div class="form-group">   
         <label for="edit_category">Категория</label>
         <input type="text" class="form-control" name="edit_category" value="<?=$article['category']?>" /> 
     </div>
     <button class="btn btn-info" name="edit_article">Изменить</button>    
 </form>
+<div id="wr"></div>

@@ -82,7 +82,7 @@
                     <div class="details">
                       <h4 class="title"><a href="index.php?c=post&=<?=$pop['id']?>"><?=$pop['title']?></a></h4>
                       <p class="date">
-                        <time datetime="2012-01-21"><?=$pop['create_at']?></time>
+                        <time datetime="2012-01-21"><?=date("d-m-Y H:i",strtotime($pop['create_at']))?></time>
                     </div>
                   </article>
                 </li>
@@ -97,9 +97,6 @@
                       <div class="photo"><a href="#"><img src="v/images/bg_user.png" alt="Photo"/></a></div>
                       <div class="details">
                         <h4 class="title"><a href="#"><?=$pop_c['name']?></a> в <a href="#"><?=$pop_c['title']?></a></h4>
-                        <p class="date">
-                          <time datetime="2012-01-29"><?=date("d-m-Y H:i",strtotime($pop_c['create_at']))?></time>
-                        </p>
                       </div>
                       <p class="text"><?=$pop_c['text_coment']?></p>
                     </article>

@@ -69,7 +69,8 @@ class A_Articles extends A_Base_admin
         //если передан GET на редактирование статьи 
         if (isset($_GET['id_red'])) {
             
-            $vars = array('article' => $this->one[0]);
+            $vars = array('article' => $this->one[0],
+                          'images' => $this->list_images);
 
             $this->content = $this->View('/admin/tpl_edit_articles.php', $vars);
         }

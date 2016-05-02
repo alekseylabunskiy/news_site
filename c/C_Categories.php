@@ -72,13 +72,6 @@ class C_Categories extends C_Base
         //Все новости рубрики
         $this->list_articles = $articles->getArticlesCategory('articles',"1,20",6);
         break;
-      case 'weather':
-        $this->main_title = 'Погода';
-        //Главная новость рубрики
-        $this->main_article = $articles->getArticlesCategory('articles',1,7);
-        //Все новости рубрики
-        $this->list_articles = $articles->getArticlesCategory('articles',"1,20",7);
-        break;
     }
   }
 

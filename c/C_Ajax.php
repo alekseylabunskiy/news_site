@@ -18,6 +18,27 @@ class C_Ajax extends C_Base
         $this->msqli = M_MSQL::Instance();
         $this->user = M_Users::Instance();
         $this->coments = M_Coments::Instance();
+        var_dump($_REQUEST);
+        //запрос на поиск комментариев
+        if ($_POST['search_coment_id'] != '') {
+            $this->comments = $articles->SearchArt('coments','id_coment',$_POST['search_coment_id']);
+        } 
+        if ($_POST['search_coment_id_user'] != '') {
+            $this->comments = $articles->SearchArt('coments','id_user',$_POST['search_coment_id_user']);
+        }
+        if ($_POST['search_coment_id_article'] != '') {
+            $this->comments = $articles->SearchArt('coments','id_article',$_POST['search_coment_id_article']);
+        }
+        if ($_POST['search_text_coment'] != '') {
+            $this->comments = $articles->SearchArt('coments','text_coment',$_POST['search_text_coment']);
+        }
+        if ($_POST['search_coment_create'] != '') {
+            $this->comments = $articles->SearchArt('coments','create_at',$_POST['search_coment_create']);
+        }
+        if ($_POST['search_coment_update'] != '') {
+            $this->comments = $articles->SearchArt('coments','update_at',$_POST['search_coment_update']);
+        }
+
         //запрос на поиск юзера
         if ($_POST['search_id_user'] != '') {
              $this->users = $articles->SearchArt('users','id_user',$_POST['search_id_user']);
@@ -126,6 +147,15 @@ class C_Ajax extends C_Base
             $vars = array('image' => $this->image[0]);
 
             $page = $this->View('/admin/tpl_search_image.php', $vars);
+        
+            echo $page;
+        }
+
+        if (isset($_POST['search_coment_id']) || isset($_POST['search_coment_id_user']) || isset($_POST['search_coment_id_article']) || isset($_POST['search_text_coment']) || isset($_POST['search_coment_create']) || isset($_POST['search_coment_update'])) {
+            // Генерация содержимого страницы 
+            $vars = array('coments' => $this->comments);
+
+            $page = $this->View('/admin/tpl_table_search_coments.php', $vars);
         
             echo $page;
         }

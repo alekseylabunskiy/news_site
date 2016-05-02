@@ -44,9 +44,7 @@ class C_Welcome extends C_Base
          //популярные статьи
         $this->pop_articles = $articles->popularArticles(3);
         //последние прокоментированные статьи
-        $this->laitest_coments = $articles->lastCommentedArticles();
-        var_dump($this->laitest_coments);
-      
+        $this->laitest_coments = $articles->lastCommentedArticles();     
     }
 
     //
@@ -55,7 +53,7 @@ class C_Welcome extends C_Base
     protected function OnOutput() 
     {   	
         // Генерация содержимого страницы Welcome.
-    	$vars = array('one_latest_news' => $this->one_latest_news,
+	  $vars = array('one_latest_news' => $this->one_latest_news,
                     'list_laitest_news' => $this->list_laitest_news,
                     'editor_choise' => $this->editor_choise,
                     'ukraine' => $this->ukraine,

@@ -14,7 +14,7 @@ $login - логин пользователя
       <form action="index.php?c=login" method="post">
         <div class="form-item">
           <label for="edit-submitted-name">Логин</label>
-          <input type="text" class="form-text" value="<?=$login?>" size="60" id="edit-submitted-name" name="login" maxlength="128" required/>
+          <input type="text" class="form-text"  size="60" id="edit-submitted-name" name="login" maxlength="128" required/>
           <span title="This field is required." class="form-required"></span> </div>
         <div class="form-item">
           <label for="edit-submitted-website">Пароль</label>

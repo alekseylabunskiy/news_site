@@ -66,7 +66,6 @@
                 <li><a href="index.php?c=categories&id_category=intertaiment"><span class="bg">Развлечения</span></a></li>
                 <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
                 <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
-                <li><a href="index.php?c=categories&id_category=weather"><span class="bg">Погода</span></a></li>
                 <?if($accsess):?>
                 <li><a href="index.php?a=admin_panel"><span class="bg">Админка</span></a></li>
                 <?endif?>
@@ -93,8 +92,7 @@
             <li><a href="index.php?c=categories&id_category=sport"><span class="bg">Спорт</span></a></li>
             <li><a href="index.php?c=categories&id_category=intertaiment"><span class="bg">Развлечения</span></a></li>
             <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
-            <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
-            <li><a href="index.php?c=categories&id_category=weather"><span class="bg">Погода</span></a></li>            
+            <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>            
             <li><a href="#">О Нас</a></li>
             <li><a href="contacts.html">Контакты</a></li>
           </ul>
