@@ -30,7 +30,10 @@ switch ($_GET['c'])
       break;
   case 'gallery_list':
     $controller = new C_Gallery_list();
-      break;          
+      break;
+  case 'gallery_page':
+    $controller = new C_Gallery_Page();
+      break;              
   default:
     $controller = new C_Welcome();
 }
@@ -53,6 +56,9 @@ switch ($_GET['a']) {
     break;  
   case 'upload_files':
     $controller = new A_Images();
+    break;  
+  case 'redact_galleryes':
+    $controller = new A_Gallery();
     break;    
 }
 // Обработка запроса.

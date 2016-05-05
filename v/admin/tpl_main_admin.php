@@ -13,6 +13,7 @@
     <script src="v/js/searchUser.js"></script>
     <script src="v/js/searchForm.js"></script>
     <script src="v/js/searchComents.js"></script>
+    <script src="v/js/searchImageForTitleGallery.js"></script>
 </head>
 <body>
     <div id="adm-header">
@@ -34,8 +35,8 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Добавить/удалить галерею</a></li>
-                        <li><a href="#">Добавить/Удалить фото</a></li>
+                        <li><a href="index.php?a=redact_galleryes">Редактировать</a></li>
+                        <li><a href="index.php?a=redact_galleryes&add_gallery">Добавить Галлерею</a></li>
                     </ul>
             </li>
             <li class="dropdown">
@@ -55,7 +56,6 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a href="index.php?a=redact_coments">Редактировать</a></li>
-                        <li><a href="#">Добавить/Удалить</a></li>
                     </ul>   
             </li>
             <li class="dropdown">

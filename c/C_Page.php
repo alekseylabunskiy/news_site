@@ -16,6 +16,7 @@ class C_Page extends C_Base
         $this->articles = M_Articles::Instance();
         $this->coments = M_Coments::Instance();
         $this->user = M_Users::Instance();
+        $this->mysqli = M_MSQL::Instance();
 
         //текущий пользователь
         $this->current_user = $this->user->Get();
@@ -44,6 +45,8 @@ class C_Page extends C_Base
         $this->bcamp = $this->articles->Breadcumps($this->art[0]['category']);
         //устанавливаем значение строчки "коментарии"
         $this->com = $this->articles->stringComent($this->art[0]['count_coments']);
+        //фото
+        $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC");
     }
 
     //
@@ -58,7 +61,8 @@ class C_Page extends C_Base
                       'get' => $this->get,
                       'alert' => $this->alert,
                       'bcamp' => $this->bcamp[0],
-                      'description_count_com' =>$this->com);
+                      'description_count_com' =>$this->com,
+                      'in_foto' => $this->in_foto);
         
         $this->content = $this->View('tpl_one_post.php', $vars);
 

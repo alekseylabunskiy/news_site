@@ -14,12 +14,15 @@ class C_Categories extends C_Base
     parent::OnInput();
 
     $articles = M_Articles::Instance();
+    $this->mysqli = M_MSQL::Instance();
 
     //популярные статьи
     $this->pop_articles = $articles->popularArticles(3);
     //последние прокоментированные статьи
     $this->laitest_coments = $articles->lastCommentedArticles();
     
+    //фото
+    $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC");
     //Переопределяем функции исходя из переданного гет параметра 
 
     switch ($_GET['id_category']) {
@@ -85,7 +88,8 @@ class C_Categories extends C_Base
                     'main_article'=>$this->main_article,
                     'list_articles' => $this->list_articles,
                     'pop_articles' =>$this->pop_articles,
-                    'laitest_coments' =>$this->laitest_coments);
+                    'laitest_coments' =>$this->laitest_coments,
+                    'in_foto' => $this->in_foto);
       
       $this->content = $this->View('tpl_list_news.php', $vars);
 

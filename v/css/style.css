@@ -129,7 +129,7 @@ section.about h4.title a{font-size:20px;letter-spacing:0;line-height:22px;}
 section.about h4.title span.photos{font-size:14px;letter-spacing:0;}
 section.about .photo{float: left;width: 282px;height: 211px;padding-right: 20px}
 #content .node .about p{margin-bottom:10px;font-size:12px;}
-section.about .details{float: left;width: 315px;line-height: 1.5;}
+section.about .details{width: 600px;line-height: 1.5;}
 .right_sidebar section.about .details{float:left;width:315px;}
 section.related{padding-top:9px;overflow:hidden;}
 .related li{float:left;width:265px;padding:0 40px 0 14px;}
@@ -302,7 +302,7 @@ h4.title span.photos{color:#828181;font-size:12px;font-weight:normal;}
 .gallery_4columns .photo .bg{background:url(../images/bg_zoom.png) no-repeat 50% 50%;display:none;height:100px;width:140px;position:absolute;top:0;left:0;z-index:11;}
 .gallery_3columns .photo .bg{background:url(../images/bg_zoom.png) no-repeat 50% 50%;display:none;height:139px;width:195px;position:absolute;top:0;left:0;z-index:11;}
 #gallery_list, #gallery_list ul{overflow:hidden;}
-#gallery_list .photo, #gallery_list .details{float:left;position:relative;}
+#gallery_list .photo{float:left;position:relative;}
 #gallery_list h4.title{letter-spacing:0;margin-bottom:0;}
 .gallery_with_description .details h4.title{margin-top:0;}
 #gallery_list li{float:left;overflow:hidden;padding-right:26px;margin-bottom:12px !important;}
@@ -401,3 +401,11 @@ ul.sitemap li ul{margin-top:15px;}
 #comm{margin: 10px;border-radius: 10px; padding: 5px; box-shadow: 5px 5px 2px; background-color:#EBEBEB;}
 #search_image{margin: 10px;}
 #wr{height: 250px;}
+#gallery_list{height: 220px;}
+#view_all_gallery{margin-top: 5px;}
+#gall{margin-left:45px;margin-right: 45px;margin-bottom: 15px;}
+#gall img{border-radius: 10px;}
+.gall_images{margin-left: 1px;}
+#title_gallery{text-align: center;font-size: 36px; margin: 10px;}
+#description_gallery{text-align: center;font-size: 18px; margin: 10px;}
+#gall_1{margin: 25px;}

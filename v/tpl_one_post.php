@@ -94,14 +94,13 @@
             <h3 class="block_title">В фото</h3>
             <div class="content">
               <ul>
-                <li>                  
-                  <div class="item"><a href="/v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['description_foto']?>"><img src="/v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>                 
-                </li>
                 <li>
-                  <div class="item"><a href="/v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['description_foto']?>"><img src="/v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                  <?foreach($in_foto as $list):?>
+                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="Photo 1"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                  <?endforeach?>
                 </li>
               </ul>
-              <p><a href="index.php?c=gallery_4columns" class="view_all"><span><span>Все фото</span></span></a></p>
+              <p><a href="index.php?c=gallery_list" class="view_all"><span><span>Все фото</span></span></a></p>
             </div>
           </aside>
         </div>

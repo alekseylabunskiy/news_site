@@ -301,4 +301,3 @@ function getSearchName(){
 $(document).ready(function(){
    setInterval(Trigger_user,1000);
 }); 
-        

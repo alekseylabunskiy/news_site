@@ -18,6 +18,8 @@
 <script src="v/js/script.js"></script>
 <script src="v/js/addComents.js"></script>
 <script src="v/js/comentsList.js"></script>
+<script src="v/js/functions.js"></script>
+
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <![endif]-->

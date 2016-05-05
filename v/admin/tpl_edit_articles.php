@@ -1,7 +1,6 @@
 <div class="panel panel-primary" class="panel-primary-admin">
- <div class="panel-body" style="text-align: center;"><h3>Редактор Статьи</h3></div>
+    <div class="panel-body" style="text-align: center;"><h3>Редактор Статьи</h3></div>
 </div>
-
 <form role="form" action="index.php?a=red_articles&id_red=<?=$article['id']?>" method="post"  class="panel-primary-admin">
     <div class="form-group">
         <label for="edit_title">Заголовок</label>
@@ -13,12 +12,13 @@
     </div>
     <div class="form-group">   
         <label for="edit_category">Текущее зображение</label><br />
-        <img src="/v/content_Images/images/216/<?=$article['image']?>" alt=""><br />
+        <img class="img-rounded" src="/v/content_Images/images/216/<?=$article['image']?>" alt=""><br />
+        <label for="search_image">Новое изображение</label>
         <div id="search_image"></div>  
-        <select class="form-control" name="edit_image" id="image_to_art" >
+        <select class="form-control" name="edit_image" id="image_to_art" multiple>
             <option value="" selected>Выбераем фото</option>
                 <?php foreach($images as $list):?> 
-                    <option value="<?=$list['name']?>"><?=$list['name']?></option>                    
+                    <option value="<?=$list['name']?>" class="optim"><?=$list['name']?></option>                    
                 <?php endforeach?>
                 <option id="hidden_name" hidden></option>  
                 <option value="" id="hidden_inp" hidden></option> 

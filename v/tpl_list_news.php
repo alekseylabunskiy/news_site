@@ -55,13 +55,8 @@
             <div class="content">
               <ul>
                 <li>
-                  <?foreach($foto_slider as $list):?>                 
-                  <div class="item"><a href="/v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['description_foto']?>"><img src="/v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div> 
-                  <?endforeach?>                  
-                </li>
-                <li>
-                  <?foreach($foto_slider2 as $list):?>
-                    <div class="item"><a href="/v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['description_foto']?>"><img src="/v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                  <?foreach($in_foto as $list):?>
+                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="Photo 1"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
                   <?endforeach?>
                 </li>
               </ul>

@@ -228,24 +228,13 @@
       <div id="right_sidebar">
         <div class="region">
           <aside id="block_in_pictures" class="block">
-            <h3 class="block_title">В Фото</h3>
+            <h3 class="block_title">Фото</h3>
             <div class="content">
               <ul>
                 <li>
-                  <div class="item"><a href="v/images/content/in_pictures_1.jpg" title="Photo 1"><img src="v/images/content/in_pictures_1_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_2.jpg" title="Photo 2"><img src="v/images/content/in_pictures_2_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_3.jpg" title="Photo 3"><img src="v/images/content/in_pictures_3_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_4.jpg" title="Photo 4"><img src="v/images/content/in_pictures_4_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_5.jpg" title="Photo 5"><img src="v/images/content/in_pictures_5_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_6.jpg" title="Photo 6"><img src="v/images/content/in_pictures_6_thumb.jpg" alt="" /></a></div>
-                </li>
-                <li>
-                  <div class="item"><a href="v/images/content/in_pictures_7.jpg" title="Photo 7"><img src="v/images/content/in_pictures_7_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_8.jpg" title="Photo 8"><img src="v/images/content/in_pictures_8_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_9.jpg" title="Photo 9"><img src="v/images/content/in_pictures_9_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_10.jpg" title="Photo 10"><img src="v/images/content/in_pictures_10_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_11.jpg" title="Photo 11"><img src="v/images/content/in_pictures_11_thumb.jpg" alt="" /></a></div>
-                  <div class="item"><a href="v/images/content/in_pictures_12.jpg" title="Photo 12"><img src="v/images/content/in_pictures_12_thumb.jpg" alt="" /></a></div>
+                  <?foreach($in_foto as $list):?>
+                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="Photo 1"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                  <?endforeach?>
                 </li>
               </ul>
               <p><a href="#" class="view_all"><span><span>Все Фото</span></span></a></p>

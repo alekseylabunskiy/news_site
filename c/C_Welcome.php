@@ -15,6 +15,7 @@ class C_Welcome extends C_Base
       parent::OnInput();
 
         $articles = M_Articles::Instance();
+        $this->mysqli = M_MSQL::Instance();
       
         //список последних новостей
         $this->list_laitest_news = $articles->getArticles('articles',"1,4");
@@ -44,7 +45,9 @@ class C_Welcome extends C_Base
          //популярные статьи
         $this->pop_articles = $articles->popularArticles(3);
         //последние прокоментированные статьи
-        $this->laitest_coments = $articles->lastCommentedArticles();     
+        $this->laitest_coments = $articles->lastCommentedArticles();  
+        //фото
+        $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC");   
     }
 
     //
@@ -66,7 +69,8 @@ class C_Welcome extends C_Base
                     'helth' => $this->helth,
                     'tech' => $this->tech,
                     'pop_articles' => $this->pop_articles,
-                    'laitest_coments' => $this->laitest_coments);
+                    'laitest_coments' => $this->laitest_coments,
+                    'in_foto' => $this->in_foto);
     	
     	$this->content = $this->View('tpl_home_page.php', $vars);
 

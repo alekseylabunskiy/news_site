@@ -1,17 +1,16 @@
-function insertName(){
-    var name = $('#image_to_art').val();
-    var g = $('#hidden_name').val();
-    
+function insertImageForGallery(){
+    var name = $('#image_to_gallery').val();
+    var g = $('#hidden_name_g').val();
     if (g != name) {
-        var target = $('#hidden_name').val(name);
+        var target = $('#hidden_name_g').val(name);
 
         $.ajax({
          url:'index.php?a=ajax_request',
          type:'POST',
-         data:{search_image:target.val(),
+         data:{searchImageForGallery:target.val(),
                a:'ajax_request'},
          success: function(data){                            
-                     $('#search_image').html(data); 
+                     $('#search_image_for_gall').html(data); 
                   },
          error: function(jqXHR, exception)
                {
@@ -38,5 +37,5 @@ function insertName(){
 
 
 $(document).ready(function(){
-   setInterval(insertName,1000);
+   setInterval(insertImageForGallery,1000);
 });

@@ -18,7 +18,6 @@ class C_Ajax extends C_Base
         $this->msqli = M_MSQL::Instance();
         $this->user = M_Users::Instance();
         $this->coments = M_Coments::Instance();
-        var_dump($_REQUEST);
         //запрос на поиск комментариев
         if ($_POST['search_coment_id'] != '') {
             $this->comments = $articles->SearchArt('coments','id_coment',$_POST['search_coment_id']);
@@ -88,7 +87,11 @@ class C_Ajax extends C_Base
             $im = $_POST['search_image']; 
             $this->image = $this->msqli->Select("SELECT * FROM images WHERE name = '{$im}'");
         }
-
+        //поиск изображений к галереям
+        if (isset($_POST['searchImageForGallery'])) {
+            $image = $_POST['searchImageForGallery'];
+            $this->image_for_gallery =  $this->msqli->Select("SELECT * FROM fotos_to_gallery WHERE name_foto = '{$image}'");
+        }
         //Поиск новостей
         if ($_POST['search_words'] != '') {
             $this->search = $articles->SearchArt('articles','id',$_POST['search_words']);
@@ -114,6 +117,14 @@ class C_Ajax extends C_Base
     //
     protected function OnOutput() 
     {   
+        if (isset($_POST['searchImageForGallery'])) {
+            // Генерация содержимого страницы 
+            $vars = array('image_for_gallery' => $this->image_for_gallery[0]);
+
+            $page = $this->View('/admin/tpl_search_image_for_gallery.php', $vars);
+        
+            echo $page;
+        }
         if (isset($_POST['search_id_user']) || isset($_POST['search_login_user']) || isset($_POST['search_email_user']) || $_POST['search_role_user'] || $_POST['search_name_user']) {
             // Генерация содержимого страницы .
             $vars = array('users' => $this->users);
