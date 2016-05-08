@@ -96,7 +96,7 @@
               <ul>
                 <li>
                   <?foreach($in_foto as $list):?>
-                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="Photo 1"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['title_foto']?>"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
                   <?endforeach?>
                 </li>
               </ul>

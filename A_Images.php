@@ -25,7 +25,6 @@ class A_Images extends A_Base_admin
 
             //сохраняем
             $sizes = array(
-                '618' => array('width' => 618, 'height' => 468),
                 '458' => array('width' => 458, 'height' => 335),
                 '282' => array('width' => 282, 'height' => 211),
                 '216' => array('width' => 216, 'height' => 164),

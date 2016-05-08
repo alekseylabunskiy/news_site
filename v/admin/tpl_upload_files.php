@@ -10,10 +10,14 @@
             <button type="submit" class="btn btn-success" name="confirm_input_file">Записать</button>
         </div>
     </form>
-    <div id="message">
-        <p class="alert alert-success"><?=$message_succsess?></p>   
-    </div>
-    <div id="message">
-        <p class="alert alert-warning"><?=$message_error?></p>   
-    </div>
+    <?if(!empty($message_succsess)):?>
+        <div id="message">
+            <p class="alert alert-success"><?=$message_succsess?></p>
+        </div>
+    <?endif?>    
+    <?if(!empty($message_error)):?>
+        <div id="message">
+            <p class="alert alert-warning"><?=$message_error?></p>   
+        </div>
+    <?endif?>
 </div>

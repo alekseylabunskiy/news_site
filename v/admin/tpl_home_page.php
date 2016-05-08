@@ -48,7 +48,7 @@
                   <div>
                     <img style="width: 99%; height: 220px;" src="v/gallery/618/012edf50762b366548250c0e568e1093.jpg" alt="Photo"/>
                     <div class="description_s">
-                      От теории заговора до отрицания:реакции
+                      От теории заговора до отрицания:реакции на фигурантов и контролирующих органов затронуты  
                     </div>
                   </div>
                   <div>
@@ -258,7 +258,7 @@
               <ul>
                 <li>
                   <?foreach($in_foto as $list):?>
-                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="<?=$list['title_foto']?>"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
+                    <div class="item"><a href="v/gallery/618/<?=$list['name_foto']?>" title="Photo 1"><img src="v/gallery/96/<?=$list['name_foto']?>" alt="" /></a></div>
                   <?endforeach?>
                 </li>
               </ul>
