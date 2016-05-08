@@ -84,12 +84,9 @@ class M_Users
 			return false;
 				
 		// запоминаем имя и md5(пароль)
-		if ($remember)
-		{
 			$expire = time() + 3600 * 24 * 100;
 			setcookie('login', $login, $expire);
-			setcookie('password', md5($password), $expire);
-		}		
+			setcookie('password', md5($password), $expire);		
 				
 		// открываем сессию и запоминаем SID
 		$this->sid = $this->OpenSession($id_user);
@@ -157,8 +154,8 @@ class M_Users
 	//
 	public function GetByLogin($login)
 	{	
-		$t = "SELECT * FROM users WHERE login = '%s'";
-		$query = sprintf($t, mysql_real_escape_string($login));
+		$query = "SELECT * FROM users WHERE login = '$login'";
+		
 		$result = $this->msql->Select($query);
 		return $result[0];
 	}
@@ -224,8 +221,8 @@ class M_Users
 		if ($sid == null)
 			return null;
 			
-		$t = "SELECT id_user FROM sessions WHERE sid = '%s'";
-		$query = sprintf($t, mysql_real_escape_string($sid));
+		$query = "SELECT id_user FROM sessions WHERE sid = '$sid'";
+
 		$result = $this->msql->Select($query);
 				
 		// Если сессию не нашли - значит пользователь не авторизован.

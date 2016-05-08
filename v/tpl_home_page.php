@@ -1,4 +1,4 @@
-  <!-- content top -->
+ <!-- content top -->
   <div id="content_top">
     <div class="region">
       <aside id="block_breaking_news" class="block">
@@ -32,15 +32,40 @@
             <?endforeach?>
           </ul>
         </div>
+        
       </aside>
       <div id="block_content_top_tabs" class="block">
-        <div id="video_block">
-          <div id="video_title">
-            <p id="video_title_e">Видео</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/3K-uLLQfPOA" frameborder="0" allowfullscreen></iframe>
-            <p id="video_title">Как Фирсова и Томенко лишили депутатских мандатов. Факты недели, 03.04</p>
+        <div class="tabslide">
+          <div class="tabs">
+                <span class="tab" data-id="1"><img src="v/gallery/65/012edf50762b366548250c0e568e1093.jpg" alt="Photo"/></span>
+                <span class="tab" data-id="2"><img src="v/gallery/65/56c2a75b763e51fd21471e331d25b60c.jpg" alt="Photo"/></span>
+                <span class="tab" data-id="3"><img src="v/gallery/65/72ac790e707c8251e2a8b28795ba16f1.jpg" alt="Photo"/></span>
+                <span class="tab" data-id="4"><img src="v/gallery/65/ef2b98876707afe31886949c27532bc0.jpg" alt="Photo"/></span>
           </div>
-        </div>
+              <div class="pointer"><div id="pointer"></div></div>
+              <div class="slider">
+                  <div id="slider">
+                  <div>
+                    <img style="width: 99%; height: 220px;" src="v/gallery/618/012edf50762b366548250c0e568e1093.jpg" alt="Photo"/>
+                    <div class="description_s">
+                      От теории заговора до отрицания:реакции на фигурантов и контролирующих органов затронуты  
+                    </div>
+                  </div>
+                  <div>
+                    <img style="width: 99%; height: 220px;" src="v/gallery/618/56c2a75b763e51fd21471e331d25b60c.jpg" alt="Photo"/>
+                    <div class="description_s">Some Description</div>
+                  </div>
+                  <div>
+                    <img style="width: 99%; height: 220px;" src="v/gallery/618/72ac790e707c8251e2a8b28795ba16f1.jpg" alt="Photo"/>
+                    <div class="description_s">Some Description</div>
+                  </div>
+                  <div>
+                    <img style="width: 99%; height: 220px;" src="v/gallery/618/ef2b98876707afe31886949c27532bc0.jpg" alt="Photo"/>
+                    <div class="description_s">Some Description</div>
+                  </div>
+              </div>
+              </div>
+          </div>
       </div>
       <section id="block_editors_choice" class="block">
         <h3 class="block_title">Выбор Редактора</h3>
@@ -237,7 +262,7 @@
                   <?endforeach?>
                 </li>
               </ul>
-              <p><a href="#" class="view_all"><span><span>Все Фото</span></span></a></p>
+              <p><a href="index.php?c=gallery_list" class="view_all"><span><span>Все Фото</span></span></a></p>
             </div>
           </aside>
           <div id="block_sidebar_tabs" class="block">

@@ -37,6 +37,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="index.php?a=redact_galleryes">Редактировать</a></li>
                         <li><a href="index.php?a=redact_galleryes&add_gallery">Добавить Галлерею</a></li>
+                        <li><a href="index.php?a=redact_galleryes&add_foto_to_gallery">Добавить Фото в Галерею</a></li>
                     </ul>
             </li>
             <li class="dropdown">

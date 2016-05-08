@@ -17,7 +17,7 @@
     <div class="form-group">
         <label for="add_image_art" class="control-label">Изображение</label> 
         <div id="search_image"></div>  
-        <select class="form-control" name="add_image_art" id="image_to_art" >
+        <select class="form-control" name="add_image_art" id="image_to_art" multiple>
             <option value="" selected>Выбераем фото</option>
                 <?php foreach($images as $list):?> 
                     <option value="<?=$list['name']?>"><?=$list['name']?></option>                    

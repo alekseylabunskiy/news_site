@@ -409,3 +409,58 @@ ul.sitemap li ul{margin-top:15px;}
 #title_gallery{text-align: center;font-size: 36px; margin: 10px;}
 #description_gallery{text-align: center;font-size: 18px; margin: 10px;}
 #gall_1{margin: 25px;}
+.slider_i{position:relative;}
+.prew {position:absolute; top:160px; left:0px; padding:2px;background: url(../images/bg_arrows.png) 0px 0 no-repeat;width: 11px;height: 15px;cursor: pointer;}
+.next {position:absolute; top:160px; right:0px; padding:2px;background: url(../images/bg_arrows.png) -15px 0 no-repeat;width: 11px;height: 15px;cursor: pointer;}
+.items { margin:0 auto; width:260px; overflow: hidden;}
+.cnt {position:relative; width:300px; height:335px;}
+.item1 {float:left; margin:0 2px; width:255px;height: 335px;}
+.resised_image{width: 255px;height: 355px;}
+.tabslide{
+    width:96%;
+    margin: 2px 2px 2px 8px;
+    margin-top: 10px;
+    padding: 0;
+}
+.tab{
+    display:inline-block;
+    width:23%;
+    margin: 0 0 0 2px;
+    cursor:pointer;
+    padding: 0;
+}
+.pointer{
+    position:relative;
+    height:5px;
+    background:#bbb;
+    width:98%;
+    margin: 0 0 0 2px;
+}
+#pointer{
+    position:relative;
+    left:0px;
+    width:30%;
+    height:100%;
+    background:#0fa5d9;
+}
+.slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    padding-top: 10px;
+}
+#slider{
+    position:relative;
+    left:0px;   
+    white-space:nowrap;
+}
+#slider>div{
+    display:inline-block;
+    width:100%;
+}
+.description_s{
+    background-color: #F3F3F3;
+    height: 83px;
+    width: 98%;
+    padding: 2px;
+}

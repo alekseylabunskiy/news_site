@@ -29,11 +29,12 @@ class A_Articles extends A_Base_admin
         //вносим изменения в статью
         //
         if (isset($_POST['edit_article'])) {
-            $obj = ['title'=> $this->articles->Clean($_POST['edit_title']),
-                    'content' => $this->articles->Clean($_POST['edit_content']),
-                    'image' => $this->articles->Clean($_POST['edit_image']),
-                    'update_at' => date("Y-m-d H:i:s"),
-                    'category' => $this->articles->Clean($_POST['edit_category']), 
+            $obj = [
+                'title'=> $this->articles->Clean($_POST['edit_title']),
+                'content' => $this->articles->Clean($_POST['edit_content']),
+                'image' => $this->articles->Clean($_POST['edit_image']),
+                'update_at' => date("Y-m-d H:i:s"),
+                'category' => $this->articles->Clean($_POST['edit_category']), 
             ];
 
             $id = $this->articles->Clean($_GET['id_red']);

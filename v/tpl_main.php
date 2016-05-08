@@ -3,12 +3,12 @@
 
 <head>
 <meta charset="utf-8">
-<title>24NEWS</title>
+<title>360worldnews</title>
 <link href="v/css/common.css" rel="stylesheet" media="all"/>
 <link href="v/css/style.css" rel="stylesheet" media="all"/>
 <link href="v/css/skin.css" rel="stylesheet" media="all"/>
 <link rel="icon" href="v/images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="v/images/24r.png" type="image/x-icon" />
+<link rel="shortcut icon" href="v/images/360edited1.png" type="image/x-icon" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>!window.jQuery && document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
 <script src="v/js/jquery-ui.min.js"></script>
@@ -19,6 +19,7 @@
 <script src="v/js/addComents.js"></script>
 <script src="v/js/comentsList.js"></script>
 <script src="v/js/functions.js"></script>
+<script src="v/js/customSlider.js"></script>
 
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
@@ -50,7 +51,7 @@
     </div>
     <div id="header">
       <div class="wrapper">
-        <h1 id="logo"><a href="index.html" title="Home">24NEWS</a></h1>
+        <h1 id="logo"><a href="index.html" title="Home">360WorldNews</a></h1>
       </div>
     </div>
     <div id="under_header">
