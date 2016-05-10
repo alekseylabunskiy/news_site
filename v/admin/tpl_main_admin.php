@@ -65,7 +65,7 @@
                 <b class="caret"></b>
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a href="index.php?a=upload_files">Загрузить</a></li>                      
+                        <li><a href="index.php?a=upload_files">Загрузить</a></li>    
                     </ul>   
             </li>
             <li class="dropdown">

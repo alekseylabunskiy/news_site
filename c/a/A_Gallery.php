@@ -14,6 +14,7 @@ class A_Gallery extends A_Base_admin
         $this->mysqli = M_MSQL::Instance();
         $this->users = M_Users::Instance();
         $this->art = M_Articles::Instance();
+        $this->functions = M_Functions::Instance();
     }
     
     //
@@ -60,6 +61,21 @@ class A_Gallery extends A_Base_admin
         $this->one_gallery = $this->mysqli->Select("SELECT * FROM `gallery_list` WHERE id = {$this->id_gallery}"); 
         //список изображений
         $this->list_images = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery`");
+
+        //добавляем фото к галерее
+        if (isset($_POST['add_fotos_to_g'])) {
+
+            $obj = ['name_foto' => $this->art->Clean($_POST['foto_name']),
+                    'title_foto' => $this->art->Clean($_POST['add_title_image']),
+                    'id_gallery' => $this->art->Clean($_POST['add_cathegory']),
+                    'create_at' => date("Y-m-d H:i:s")];
+
+            $this->mysqli->Insert('fotos_to_gallery',$obj);
+        }
+        //контент
+        $this->list_fotos_to_gallery = $this->functions->Page_navigation_content('images',4,intval($_GET['page']));
+
+        $this->nav = $this->functions->Page_navigation('images',4,intval($_GET['page']));
     }
     //
     // Виртуальный генератор HTML.
@@ -71,6 +87,15 @@ class A_Gallery extends A_Base_admin
 
         $this->content = $this->View('/admin/tpl_redact_gallery.php', $vars);
         
+        if (isset($_GET['add_foto_to_gallery'])) {
+            // Генерация содержимого страницы.
+            $vars = array('list_fotos_to_gallery' =>$this->list_fotos_to_gallery,
+                          'galleryes' => $this->galleryes,
+                          'nav' => $this->nav);
+
+            $this->content = $this->View('/admin/tpl_add_foto_to_gallery.php', $vars);
+        }
+
         if (isset($_GET['add_gallery'])) {
             $vars = array('list_images' => $this->list_images,
                           'title' => $this->title);

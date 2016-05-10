@@ -59,7 +59,7 @@ switch ($_GET['a']) {
     break;  
   case 'redact_galleryes':
     $controller = new A_Gallery();
-    break;    
+    break;  
 }
 // Обработка запроса.
 $controller->Request();

@@ -55,7 +55,7 @@ class A_Articles extends A_Base_admin
             $this->one = $this->articles->getOneArticle('articles',$_GET['id_red']);
         } 
         //список изображений
-        $this->list_images = $this->mysqli->Select("SELECT * FROM `images` ORDER BY id DESC");
+        $this->list_images = $this->mysqli->Select("SELECT * FROM `images` WHERE `category` = 'article' ORDER BY id DESC");
     }
     //
     // Виртуальный генератор HTML.
