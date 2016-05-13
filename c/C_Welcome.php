@@ -47,7 +47,9 @@ class C_Welcome extends C_Base
         //последние прокоментированные статьи
         $this->laitest_coments = $articles->lastCommentedArticles();  
         //фото
-        $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC");   
+        $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC"); 
+        //репортаж
+        $this->rep =  $articles->Report(); 
     }
 
     //
@@ -70,7 +72,8 @@ class C_Welcome extends C_Base
                     'tech' => $this->tech,
                     'pop_articles' => $this->pop_articles,
                     'laitest_coments' => $this->laitest_coments,
-                    'in_foto' => $this->in_foto);
+                    'in_foto' => $this->in_foto,
+                    'rep' => $this->rep);
     	
     	$this->content = $this->View('tpl_home_page.php', $vars);
 

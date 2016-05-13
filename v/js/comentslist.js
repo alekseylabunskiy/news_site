@@ -1,6 +1,6 @@
 $(function() {
     //ловим отправку формы
-    $("form#comment_form").submit(function(e){
+    $("form #comment_form").submit(function(e){
         //запрещаем ее отправку
         e.preventDefault();
         //прячем вывод старых коментариев
@@ -9,6 +9,7 @@ $(function() {
         var message = $("#edit-submitted-message").val();
         //id статьи  
         var furl=$(this).attr('action').split("?")[1].split("&")[1].split("id=")[1]; 
+        
         //ajax запрос на контроллер C_Ajax        
         $.ajax({
             type: "POST",

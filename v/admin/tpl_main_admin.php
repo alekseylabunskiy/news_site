@@ -13,6 +13,7 @@
     <script src="v/js/searchUser.js"></script>
     <script src="v/js/searchForm.js"></script>
     <script src="v/js/searchComents.js"></script>
+    <script src="v/js/functions_for_adm.js"></script>
     <script src="v/js/searchImageForTitleGallery.js"></script>
 </head>
 <body>

@@ -40,7 +40,7 @@ class A_Articles extends A_Base_admin
             $id = $this->articles->Clean($_GET['id_red']);
             $this->update = $this->articles->UpdateArticles('articles',$obj,$id);
         }
-        $this->list = $this->articles->getArticles('articles',100);
+
         //
         //удаляем статью
         //
@@ -56,6 +56,10 @@ class A_Articles extends A_Base_admin
         } 
         //список изображений
         $this->list_images = $this->mysqli->Select("SELECT * FROM `images` WHERE `category` = 'article' ORDER BY id DESC");
+        //список категорий
+        $this->list_categories = $this->mysqli->Select("SELECT * FROM `categories`");
+        //список статей
+        $this->list = $this->articles->getArticles('articles',100);
     }
     //
     // Виртуальный генератор HTML.
@@ -78,7 +82,8 @@ class A_Articles extends A_Base_admin
         //добавляем статью
         if (isset($_GET['add_articles'])) {
            
-            $vars = array('images' => $this->list_images);
+            $vars = array('images' => $this->list_images,
+                          'list_categories' => $this->list_categories);
 
             $this->content = $this->View('/admin/tpl_add_article.php', $vars);
         }

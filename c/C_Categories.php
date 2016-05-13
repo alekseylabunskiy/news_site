@@ -20,7 +20,6 @@ class C_Categories extends C_Base
     $this->pop_articles = $articles->popularArticles(3);
     //последние прокоментированные статьи
     $this->laitest_coments = $articles->lastCommentedArticles();
-    
     //фото
     $this->in_foto = $this->mysqli->Select("SELECT * FROM `fotos_to_gallery` ORDER BY id_foto DESC");
     //Переопределяем функции исходя из переданного гет параметра 
@@ -75,6 +74,13 @@ class C_Categories extends C_Base
         //Все новости рубрики
         $this->list_articles = $articles->getArticlesCategory('articles',"1,20",6);
         break;
+      case 'report':
+        $this->main_title = 'Репортаж';
+        //Главная новость рубрики
+        $this->main_article = $articles->getArticlesCategory('articles',1,10);
+        //Все новости рубрики
+        $this->list_articles = $articles->getArticlesCategory('articles',"1,20",10);
+        break;  
     }
   }
 

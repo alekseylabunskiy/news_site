@@ -17,7 +17,7 @@
 <script src="v/js/jquery.colorbox-min.js"></script>
 <script src="v/js/script.js"></script>
 <script src="v/js/addComents.js"></script>
-<script src="v/js/comentsList.js"></script>
+<script src="v/js/comentslist.js"></script>
 <script src="v/js/functions.js"></script>
 <script src="v/js/customSlider.js"></script>
 
@@ -59,9 +59,9 @@
         <div id="block_main_menu" class="block">
           <div class="inner">
             <nav>
-              <ul>
-                <li class="first active"><a href="index.php"><span class="bg">Главная</span></a></li>
-                <li><a href="index.php?c=gallery_list"><span class="bg">Галерея</span></a></li>
+              <ul id="ul_block_m_menu">
+                <li class="active"><a href="index.php"><span class="bg">Главная</span></a></li>
+                <li ><a href="index.php?c=gallery_list"><span class="bg">Галерея</span></a></li>
                 <li><a href="index.php?c=categories&id_category=world"><span class="bg">Мир</span></a></li>
                 <li><a href="index.php?c=categories&id_category=ukraine"><span class="bg">Украина</span></a></li>
                 <li><a href="index.php?c=categories&id_category=bisness"><span class="bg">Бизнесс</span></a></li>
@@ -69,6 +69,7 @@
                 <li><a href="index.php?c=categories&id_category=intertaiment"><span class="bg">Развлечения</span></a></li>
                 <li><a href="index.php?c=categories&id_category=helth"><span class="bg">Здоровье</span></a></li>
                 <li><a href="index.php?c=categories&id_category=tech"><span class="bg">Техника</span></a></li>
+                <li><a href="index.php?c=categories&id_category=report"><span class="bg">Репортаж</span></a></li>
                 <?if($accsess):?>
                 <li><a href="index.php?a=admin_panel"><span class="bg">Админка</span></a></li>
                 <?endif?>

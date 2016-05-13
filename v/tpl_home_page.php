@@ -31,38 +31,27 @@
               <li><a href="index.php?c=post&id=<?=$list['id']?>"><?=date("H:i",strtotime($list['create_at']))." "?><?=$list['title']?></a></li>
             <?endforeach?>
           </ul>
-        </div>
-        
+        </div>       
       </aside>
       <div id="block_content_top_tabs" class="block">
+        <h3 class="block_title">Репортаж</h3>
         <div class="tabslide">
           <div class="tabs">
-                <span class="tab" data-id="1"><img src="v/gallery/65/012edf50762b366548250c0e568e1093.jpg" alt="Photo"/></span>
-                <span class="tab" data-id="2"><img src="v/gallery/65/56c2a75b763e51fd21471e331d25b60c.jpg" alt="Photo"/></span>
-                <span class="tab" data-id="3"><img src="v/gallery/65/72ac790e707c8251e2a8b28795ba16f1.jpg" alt="Photo"/></span>
-                <span class="tab" data-id="4"><img src="v/gallery/65/ef2b98876707afe31886949c27532bc0.jpg" alt="Photo"/></span>
+            <?foreach($rep as $list):?>
+              <span class="tab" data-id="<?=$list['data-id']?>"><img src="/v/content_Images/images/65/<?=$list['image']?>" alt="Photo"/></span>
+            <?endforeach?>    
           </div>
               <div class="pointer"><div id="pointer"></div></div>
               <div class="slider">
                   <div id="slider">
-                  <div>
-                    <img style="width: 99%; height: 220px;" src="v/gallery/618/012edf50762b366548250c0e568e1093.jpg" alt="Photo"/>
-                    <div class="description_s">
-                      От теории заговора до отрицания:реакции
+                  <?foreach($rep as $list):?>
+                    <div>
+                      <a href="index.php?c=post&id=<?=$list['id']?>"><img style="width: 99%; height: 220px;" src="/v/content_Images/images/618/<?=$list['image']?>" alt="Photo"/></a>
+                      <div class="description_s" id="desc">
+                        <p><?=$list['title']?></p>
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <img style="width: 99%; height: 220px;" src="v/gallery/618/56c2a75b763e51fd21471e331d25b60c.jpg" alt="Photo"/>
-                    <div class="description_s">Some Description</div>
-                  </div>
-                  <div>
-                    <img style="width: 99%; height: 220px;" src="v/gallery/618/72ac790e707c8251e2a8b28795ba16f1.jpg" alt="Photo"/>
-                    <div class="description_s">Some Description</div>
-                  </div>
-                  <div>
-                    <img style="width: 99%; height: 220px;" src="v/gallery/618/ef2b98876707afe31886949c27532bc0.jpg" alt="Photo"/>
-                    <div class="description_s">Some Description</div>
-                  </div>
+                  <?endforeach?>   
               </div>
               </div>
           </div>

@@ -31,6 +31,7 @@ class A_Images extends A_Base_admin
                 '216' => array('width' => 216, 'height' => 164),
                 '120' => array('width' => 120, 'height' => 90),
                 '86' => array('width' => 86, 'height' => 60),
+                '65' => array('width' => 65, 'height' => 47),
             );
             $this->foto = $this->image->SaveResized($sizes,'v/content_Images/images/');
             //записываем имя фото в базу данных
@@ -54,6 +55,7 @@ class A_Images extends A_Base_admin
                 '618' => array('width' => 618, 'height' => 468),
                 '282' => array('width' => 282, 'height' => 211),
                 '96' => array('width' => 96, 'height' => 76),
+                '65' => array('width' => 65, 'height' => 47),
             );
             $this->foto = $this->image->SaveResized($sizes,'v/gallery/');
             //записываем имя фото в базу данных

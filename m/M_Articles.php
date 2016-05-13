@@ -100,9 +100,29 @@ class M_Articles
     }
     //удаляем статью
     public function DeleteArticles($id){
-        $where = "id = $id";
-        $result = $this->db->Delete('articles', $where);
-            return $result;
+        //удаляем изображение привязанное к статье
+        //массив с названиями папок
+        $files = ['618','458','282','216','120','86','65'];
+        //выбираем нужное изображение
+        $image = $this->db->Select("SELECT * FROM articles WHERE id = $id");
+        //обхрдим все папки с изображениями 
+        for ($i=0; $i < count($files); $i++) { 
+            //директория
+            $dir = "v/content_Images/images/";
+            //изображение
+            $img = $image[0]['image'];
+            $path = $dir.$files[$i]."/";
+            //удаляем изображение
+            $unlink = unlink($dir.$files[$i]."/".$img);
+            
+            $where = "id = $id";
+            //удаляем путь к изображению
+            $result = $this->db->Delete('images', $where);
+            //Удаляем новость
+            $result = $this->db->Delete('articles', $where);
+            
+            return true;
+        }
     }
     //добавляем статью
     public function addArticles($title,$content,$author,$image,$category){
@@ -163,7 +183,15 @@ class M_Articles
 
         return result;
     }
+    //Репортаж
+    public function Report(){
+        $art = $this->db->Select("SELECT * FROM `articles` WHERE category = 10 ORDER BY category DESC  LIMIT 4");
+        for ($i=0; $i < count($art); $i++) { 
 
+            $art[$i]['data-id'] = $i + 1;
+        }
+        return $art;
+    }
 
 }
 
